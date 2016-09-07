@@ -1,0 +1,84 @@
+/**
+ * Created by PhpStorm.
+ * User: claudia
+ * Date: 7/17/2016
+ * Time: 11:48 AM
+ */
+body{
+
+    position:relative;
+}
+
+/*.navbar{*/
+
+    /*height: 80px;*/
+/*}*/
+#Home {
+    /*padding:50px 0px;*/
+    height:650px;
+    /*color: GhostWhite;*/
+    background: url("../img/1.jpg") center no-repeat;
+    /*position: relative;*/
+}
+
+#CareerSummary {
+    padding-top:50px;
+    padding-bottom: 50px;
+    /*height:850px;*/
+    background-color: gainsboro;
+
+}
+
+#WorkExperience {
+    padding-top:50px;
+    /*height:650px;*/
+    color: black;
+    background-color: #fff;
+}
+
+
+
+#Education {padding-top:50px;height:500px;color: #fff; background-color: #00bcd4;}
+#Contact {padding-top:50px;height:500px;color: #fff; background-color: #009688;}
+
+h1{
+    font-size: 50px
+}
+
+h2{
+
+    font-size: 35px
+}
+
+
+.section {
+    text-align: center;
+}
+
+.section h1.title {
+    display: inline-block;
+    color: black;
+    text-align: center;
+    border-bottom: 3px solid rgba(204, 204, 204, 0.85);
+    border-top: 3px solid #cccccc;
+    padding: 10px 0;
+
+}
+.section h3.title{
+    color: black;
+
+}
+
+
+.section .icon {
+    font-size: 60px;
+    text-align: center;
+    text-shadow: 5px 5px 0 darkgray;
+}
+
+.section .row{
+    margin-top: 30px;
+
+}
+
+

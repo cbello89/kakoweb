@@ -1,0 +1,163 @@
+
+#proyectos{padding-top:3em;padding-bottom: 3em;}
+#proyectos figcaption a{border:1px solid #fff;margin-top: 1em;display: inline-block;color: #fff;padding: 0 2em;}
+#proyectos figcaption a:hover{text-decoration: none;padding: 0 3em;}
+#proyectos h2{font:600 2.0em Roboto,Arial,Helvetica;margin-bottom: 1.0em;}
+
+
+#proyectos.grid {
+    position: relative;
+    margin: 0 auto;
+    list-style: none;
+    text-align: center;
+}
+
+/* Common style */
+#proyectos.grid figure {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 0;	/*change here for spacing*/
+    /*width: 33.333333333%;*/
+    width: 25%;
+    text-align: center;
+    cursor: pointer;
+}
+
+#proyectos.grid figure img {
+    position: relative;
+    display: block;
+    max-width: 102%;
+    opacity: 1;
+}
+
+#proyectos.grid figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    /*font-size: 1.25em;*/
+    font-size: 1.0em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+#proyectos.grid figure figcaption::before,
+#proyectos.grid figure figcaption::after {
+    pointer-events: none;
+}
+
+#proyectos.grid figure figcaption,
+#proyectos.grid figure figcaption > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+#proyectos.grid figure figcaption > a {
+    z-index: 1000;
+    text-indent:200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+}
+
+#proyectos.grid figure h2 {
+    word-spacing: -0.15em;
+    font-weight: 700;
+}
+
+#proyectos.grid figure h2,
+#proyectos.grid figure p {
+    margin: 0;
+}
+
+#proyectos.grid figure p {
+    letter-spacing: 1px;
+    font-size: 68.5%;
+}
+
+
+@media screen and (max-width: 50em) {
+    .content {
+        padding: 0 10px;
+        text-align: center;
+    }
+    #proyectos.grid figure {
+        width: 50%;
+    }
+}
+
+
+@media (max-width: 639px) {
+    #proyectos.grid figure {width: 100%;}
+}
+
+/*---------------*/
+/***** Oscar *****/
+/*---------------*/
+
+
+#proyectos figure.effect-oscar figcaption {
+    padding: 15%;
+    /*padding: 10%;*/
+    /*	background-color: rgba(58,52,42,0.7);
+        -webkit-transition: background-color 0.35s;
+        transition: background-color 0.35s;*/
+}
+
+
+#proyectos figure.short_title  figcaption{
+    padding: 25%;
+}
+
+#proyectos figure.effect-oscar figcaption::before {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
+    border: 1px solid #fff;
+    content: '';
+}
+
+#proyectos figure.effect-oscar h2 {
+    margin: 0;
+    line-height: 1em;
+    -webkit-transition: -webkit-transform 0.35s;
+    transition: transform 0.35s;
+    -webkit-transform: translate3d(0,100%,0);
+    transform: translate3d(0,100%,0);
+}
+
+#proyectos figure.effect-oscar figcaption::before,
+#proyectos figure.effect-oscar p {
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0);
+    transform: scale(0);
+}
+
+#proyectos figure.effect-oscar:hover h2 {
+    -webkit-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
+}
+
+#proyectos figure.effect-oscar:hover figcaption::before,
+#proyectos figure.effect-oscar:hover p {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+#proyectos figure.effect-oscar:hover figcaption {
+    background-color: rgba(0,0,0,0.8);
+}
+
+#proyectos figure.effect-oscar:hover img {
+    opacity: 0.4;
+}
