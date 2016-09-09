@@ -1,2 +1,0 @@
-# kakoweb
-Kako's Portfolio

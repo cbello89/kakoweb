@@ -18,7 +18,7 @@ h3{font:300 2em Roboto,Arial,Helvetica;margin:2em 0 1em 0;}
 h4{font:300 1.5em Roboto,Arial,Helvetica;margin-bottom: 1em;}
 h4 i{margin-right: 0.5em;}
 
-p{font-size:1em;line-height: 1.7em; margin: 0em;}
+p{font-size:1em;line-height: 1.7em; margin: 2em;}
 
 /*.spacer{padding: 4em 0;}*/
 
@@ -163,6 +163,10 @@ p{font-size:1em;line-height: 1.7em; margin: 0em;}
     color: #aaa;
     margin: 0 1em;
     }
+
+#footer p{
+    margin-top: 0;
+}
 
 .gototop{position: fixed;bottom: 20px; right: 20px;background: rgba(0,0,0,0.5);padding: 10px;color: #fff;}
 .gototop i{line-height: 0.5em;}
