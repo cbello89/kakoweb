@@ -10,6 +10,8 @@
 eso sera luego cuando el me de el nuevo orden de la informacion y yo reprograme el script
 
 otra cosa me parece que esto esta demasiado simple, como se que el mensaje se envio correctamente? no hay forma de comprobarlo?
+ *
+ * ademas faltan las validaciones de las que me hablo noe!!
 
 */
 
@@ -24,7 +26,7 @@ if(isset($_POST ["nombre"]))
     $nombre = $_POST["nombre"];
 	$apellidos = $_POST["apellidos"];
 	$email = $_POST["email"];
-	$mensaje = $_POST["message"];
+	$mensaje = $_POST["mensaje"];
 
 }
 
@@ -36,7 +38,13 @@ $headers .= "Content-type: text/html;";
 $headers .= "charset=iso-8859-1\r\n";
 $headers .= "From: ".$From." \r\n";
 
-mail($correoDeKako,$asunto,$mensaje,$headers);
+if (mail($correoDeKako,$asunto,$mensaje,$headers)== true){
+	echo "Su mensaje ha sido enviado correctamente";
+}
+else {
+	echo "Su mensaje no ha sido enviado";
+}
+
 
 
 
