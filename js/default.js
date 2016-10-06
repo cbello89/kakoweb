@@ -2,6 +2,8 @@
  * Created by claudia on 8/11/2016.
  */
 
+
+console.log(navigator.language);
 function sendEmail(){
 
     var nombre=document.getElementById("name").value;
@@ -37,7 +39,10 @@ function hide_dropdown(id)
 
 function go_view(view)
 {
-    var ext=".php";
-    document.location=view.concat(ext);
+    document.location=view.concat('.php');
 }
 
+function go_tag(view,tag)
+{
+    document.location = view.concat('.php').concat('#').concat(tag);
+}

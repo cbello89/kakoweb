@@ -111,6 +111,14 @@
     padding-top: 25%;
 }
 
+#reportajes figure.long_title  figcaption{
+
+    padding-top: 15%;
+    padding-left: 10.4%;
+    padding-right:10.4%;
+
+}
+
 #reportajes figure.effect-oscar figcaption::before {
     position: absolute;
     top: 30px;
@@ -157,4 +165,8 @@
 
 #reportajes figure.effect-oscar:hover img {
     opacity: 0.4;
+}
+
+#reportajes h2 {
+    font-size: 30px;
 }

@@ -111,6 +111,10 @@
     padding-top: 25%;
 }
 
+#filmografia figure.long_title  figcaption{
+    padding-top: 15%;
+}
+
 #filmografia figure.effect-oscar figcaption::before {
     position: absolute;
     top: 30px;
@@ -157,4 +161,8 @@
 
 #filmografia figure.effect-oscar:hover img {
     opacity: 0.4;
+}
+
+#filmografia h2 {
+    font-size: 30px;
 }

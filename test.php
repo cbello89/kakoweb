@@ -61,8 +61,8 @@ $getfotos_tpp = mysqli_query($kako, $query_tpp);
 $result_tpp=mysqli_fetch_all($getfotos_tpp);
 var_dump($result_tpp);
 $size_tpp=sizeof($result_tpp);
-
-for($i=0;$i<$size_tpp;$i++){
+var_dump($size_tpp);
+for($i=1;$i<$size_tpp;$i++){
     $photo_path=$dir.$result_tpp[$i][2].'/'.$result_tpp[$i][3].'/'.$result_tpp[$i][1];
     echo" <img src='$photo_path'>";
 }

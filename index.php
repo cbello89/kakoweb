@@ -119,38 +119,43 @@ $size_cocodrilos=sizeof($result_cocodrilos);
               <ul class="nav navbar-nav navbar-right scroll">
                  <li class="active"><a href="#home">Inicio</a></li>
                  <li ><a href="#about">Acerca de Kako</a></li>
-                  <li ><a href="#news">Noticias</a></li>
+<!--                  <li ><a href="#news">Noticias</a></li>-->
 
                   <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')"   href="#proyectos">Proyectos<span class="caret"></span></a>
                       <ul class="dropdown-menu" id="dropdown_proyecto" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')">
-                          <li onclick="go_view('common')"><a id="common" >Lugares en Comun</a></li>
+                          <li onclick="go_view('common')"><a id="common" >Lugares Comunes</a></li>
                           <li onclick="go_view('gente')"><a id="gente">Gente de Cocodrilos</a></li>
-                          <li onclick="go_view('hermosa')"><a id="hermosa">La Tierra mas Hermosa</a></li>
+                          <li onclick="go_view('hermosa')"><a id="hermosa">La Tierra más Hermosa</a></li>
                           <li><a  onclick="go_view('piotai')"id="piotai">Pio Tai</a></li>
                       </ul>
                   </li>
 
                   <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')"  href="#reportajes">Reportajes<span class="caret" ></span></a>
                       <ul class="dropdown-menu" id="dropdown_reportajes" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')">
-                          <li onclick="go_view('riomaximo')"><a id="riomaximo">Flamencos</a></li>
-                          <li onclick="go_view('remedios')"><a id="remedios">Parrandas de Remedio</a></li>
-                          <li onclick="go_view('baloons')"><a id="baloons">Pescadores</a></li>
+                          <li onclick="go_view('riomaximo')"><a id="riomaximo">Los flamencos Rosados de Río Máximo</a></li>
+                          <li onclick="go_view('remedios')"><a id="remedios">Surreal Cuba: Christmas Rousing</a></li>
+                          <li onclick="go_view('baloons')"><a id="baloons">Rubber match: Men vs. Fish in Cuba</a></li>
                       </ul>
                   </li>
 
                   <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')" href="#ademas">Ademas..<span class="caret" ></span></a>
                       <ul class="dropdown-menu" id="dropdown_ademas" onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')">
-                          <li onclick="go_view('tpp')"><a id="tpp">Travel People and Places</a></li>
-                          <li onclick="go_view('concert')"><a id="concert">Conciertos</a></li>
-                          <li onclick="go_view('landscape')"><a id="landscape">Paisajes</a></li>
-                          <li onclick="go_view('advertise')"><a id="advertise">Publicidad</a></li>
+                          <li>
+                              <?php
+                              $first_photo_path_tpp=$dir.$result_tpp[0][2].'/'.$result_tpp[0][3].'/'.$result_tpp[0][1];
+                              echo "<a href='$first_photo_path_tpp' data-gallery='#tpp'>Viajes/Gente/Lugares</a>"
+                              ?>
+                          </li>
+                          <li><a>Conciertos</a></li>
+                          <li><a>Paisajes</a></li>
+                          <li><a>Encargos Profesionales</a></li>
                       </ul>
                   </li>
                   <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" href="#filmografia">Filmografia <span class="caret"></span> </a>
                       <ul class="dropdown-menu" id="dropdown_film" onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" >
-                          <li onclick="go_view('ellatrabaja')"><a id="ellatrabaja">Ella Trabaja</a></li>
-                          <li onclick="go_view('matahambre')"><a id="matahambre">Al sur de Matahambre</a></li>
-                          <li onclick="go_view('cocodrilos')"><a id="cocodrilos">Hombres de Cocodrilos</a></li>
+                          <li><a>Ella Trabaja</a></li>
+                          <li><a>Al sur de Matahambre</a></li>
+                          <li><a>Hombres de Cocodrilos</a></li>
                       </ul>
 
                   </li>
@@ -174,7 +179,7 @@ $size_cocodrilos=sizeof($result_cocodrilos);
       <div class="carousel-inner">
         <!-- Item 1 -->
         <div class="item active">
-          <img src="images/skl_3435.jpg" alt="banner">
+          <img src="images/1.jpg" alt="banner">
         </div>
       </div>
     </div>
@@ -187,11 +192,11 @@ $size_cocodrilos=sizeof($result_cocodrilos);
 <!--columns start-->
 <div id="about" class="container-fluid spacer about">
    <div class="row">
-       <div class="col-sm-4 profile_photo">
+       <div class="col-sm-3 profile_photo">
             <img src="images/DSC_0017.jpg" class="img-responsive">
        </div>
 
-       <div class="col-sm-8">
+       <div class="col-sm-6">
            <div class="row">
                <h2 class="text-center">Carlos Ernesto Escalona Martí</h2>
            </div>
@@ -209,51 +214,89 @@ $size_cocodrilos=sizeof($result_cocodrilos);
                Ha dictado charlas y conferencias para American University Nebraska‐Lincoln University y New Jersey College, Universidad de la Habana, Universidad de las Artes, Escuela de Fotografía Creativa de la Habana.</p>
 
            <div class="row text-center">
-               <a class="btn btn-primary" href=" CV%20Carlos%20Ernesto%20Escalona.pdf"><i class="fa fa-download"></i> Descargar PDF</a>
+               <a class="btn btn-primary" href=" CV%20Carlos%20Ernesto%20Escalona.pdf"><i class="fa fa-download"></i> Descargar CV</a>
            </div>
        </div>
+
+       <div class="col-sm-3">
+           <div class="row news">
+               <div class="col-sm-4 date">
+                   <div class="row first"><strong>Feb</strong></div>
+                   <div class="row second"><strong>2017</strong></div>
+               </div>
+
+               <div class="col-sm-8 text">
+                   <div class="row">Exhibición de la serie fotográfica "Lugares Comunes|Common Places" en el espacio La Pared Negra de la Fabrica de Arte Cubano </div>
+               </div>
+           </div>
+
+           <div class="row news1">
+               <div class="col-sm-4 date1">
+                   <div class="row first" style="font-size: 50px;"><strong>28</strong></div>
+                   <div class="row first" style="font-size: 30px"><strong>May</strong></div>
+                   <div class="row second"><strong>2016</strong></div>
+               </div>
+
+               <div class="col-sm-8 text">
+                   <div class="row">Presentacion de la ponencia "Cine para antropologos o Etnografia para cineastas. Multidiciplinariedad en el proyecto documental 'Hombres de Cocodrilos'. Congreso de Latin American Studies Association (LASA). NY, EUA"</div>
+               </div>
+           </div>
+
+           <div class="row news1">
+               <div class="col-sm-4 date1">
+                   <div class="row first"><strong>Abr</strong></div>
+                   <div class="row second"><strong>2015</strong></div>
+               </div>
+
+               <div class="col-sm-8 text">
+                   <div class="row">"Gente de Cocodrilos" se exhibe como parte del proyecto "Zona Franca", exposiciones colaterales a la XII Bienal de La Habana. Fortaleza San Carlos de la Cabaña</div>
+               </div>
+           </div>
+
+       </div>
+
    </div>
 </div>
 <!--columns start-->
 
 
-<div id="news" class="container-fluid news">
-
-    <div class="row">
-        <h2 class="text-center">Noticias</h2>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <h4 class="text-center">Febrero 2017</h4>
-            <h5 class="text-center">Exposicion en FAC "Lugares Comunes/Common Places"</h5>
-            <img src="images/2.jpg" class="img-thumbnail img-circle position">
-        </div>
-
-        <div class="col-md-4">
-            <h4 class="text-center">Febrero 2017</h4>
-            <h5 class="text-center">Exposicion en FAC "Lugares Comunes/Common Places"</h5>
-            <img src="images/2.jpg" class="img-thumbnail img-circle position">
-        </div>
-
-
-
-        <div class="col-md-4">
-            <h4 class="text-center">Febrero 2017</h4>
-            <h5 class="text-center">Exposicion en FAC "Lugares Comunes/Common Places"</h5>
-            <img src="images/2.jpg" class="img-thumbnail img-circle position">
-        </div>
-    </div>
-
-
-
-</div>
+<!--<div id="news" class="container-fluid news">-->
+<!---->
+<!--    <div class="row">-->
+<!--        <h2 class="text-center">Noticias</h2>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--        <div class="col-md-4">-->
+<!--            <h4 class="text-center">Febrero 2017</h4>-->
+<!--            <h5 class="text-center">Exposicion en FAC "Lugares Comunes/Common Places"</h5>-->
+<!--<!--            <img src="images/2.jpg" class="img-thumbnail img-circle position">-->
+<!--        </div>-->
+<!---->
+<!--        <div class="col-md-4">-->
+<!--            <h4 class="text-center">Febrero 2017</h4>-->
+<!--            <h5 class="text-center">Exposicion en FAC "Lugares Comunes/Common Places"</h5>-->
+<!--<!--            <img src="images/2.jpg" class="img-thumbnail img-circle position">-->
+<!--        </div>-->
+<!---->
+<!---->
+<!---->
+<!--        <div class="col-md-4">-->
+<!--            <h4 class="text-center">Febrero 2017</h4>-->
+<!--            <h5 class="text-center">Exposicion en FAC "Lugares Comunes/Common Places"</h5>-->
+<!--<!--            <img src="images/2.jpg" class="img-thumbnail img-circle position">-->
+<!--        </div>-->
+<!--    </div>-->
+<!---->
+<!---->
+<!---->
+<!--</div>-->
 
 <!-- proyectos -->
 <div id="proyectos"  class=" clearfix grid">
     <figure class="effect-oscar  wowload fadeInUp">
         <img src="images/portadas/1.common.jpg" alt="img01"/>
         <figcaption>
-            <h2>Lugares en Comun</h2>
+            <h2>Lugares Comunes</h2>
             <p><a href="common.php">View more</a></p>
         </figcaption>
     </figure>
@@ -261,7 +304,7 @@ $size_cocodrilos=sizeof($result_cocodrilos);
      <figure class="effect-oscar  wowload fadeInUp">
         <img src="images/portadas/1.Gente.jpg" alt="img01"/>
         <figcaption>
-            <h2>Gente de Cocodrilo</h2>
+            <h2>Gente de Cocodrilos</h2>
             <p><a href="gente.php">View more</a></p>
         </figcaption>
     </figure>
@@ -286,25 +329,25 @@ $size_cocodrilos=sizeof($result_cocodrilos);
 
 <!-- reportages -->
 <div id="reportajes"  class=" clearfix grid">
-    <figure class="effect-oscar  wowload fadeInUp short_title">
-        <img src="images/portadas/2.maximo.jpg" alt="img01"/>
+    <figure class="effect-oscar  wowload fadeInUp">
+        <img src="images/portadas/Sabana Camaguey 08-2011382.jpg" alt="img01"/>
         <figcaption>
-            <h2>Flamencos</h2>
+            <h2>Los flamencos Rosados de Río Máximo</h2>
             <p><a href="riomaximo.php">View more</a></p>
         </figcaption>
     </figure>
 
-    <figure class="effect-oscar  wowload fadeInUp">
+    <figure class="effect-oscar  wowload fadeInUp long_title">
         <img src="images/portadas/2.parrandas.jpg" alt="img01"/>
         <figcaption>
-            <h2>Parrandas de Remedios</h2>
+            <h2>Surreal Cuba: Christmas Rousing</h2>
             <p><a href="remedios.php">View more</a></p>
         </figcaption>
     </figure>
-    <figure class="effect-oscar  wowload fadeInUp short_title">
+    <figure class="effect-oscar  wowload fadeInUp long_title">
         <img src="images/portadas/2.baloon.jpg" alt="img01"/>
         <figcaption>
-            <h2>Pescadores</h2>
+            <h2>Rubber match: Men vs. Fish in Cuba</h2>
             <p><a href="baloons.php">View more</a></p>
         </figcaption>
     </figure>
@@ -317,20 +360,14 @@ $size_cocodrilos=sizeof($result_cocodrilos);
     <figure class="effect-oscar  wowload fadeInUp long_title">
         <img src="images/portadas/3.tpp.jpg" alt="img01"/>
         <figcaption>
-            <h2>Travel,People & Places</h2>
-<!--            <p><a href="images/portfolio/proyectos/piotai/1.piotai2.jpg" data-gallery='#pio'>View more</a></p>-->
+            <h2>Viajes / Gente       / Lugares</h2>
             <?php
                 $first_photo_path_tpp=$dir.$result_tpp[0][2].'/'.$result_tpp[0][3].'/'.$result_tpp[0][1];
                 echo "<p><a href='$first_photo_path_tpp' data-gallery='#tpp'>View more</a></p>"
+
             ?>
         </figcaption>
     </figure>
-
-
-    <div id="links">
-        <a href="images/portfolio/proyectos/piotai/1.piotai3.jpg" data-gallery="#tpp"></a>
-        <a href="images/portfolio/proyectos/piotai/1.piotai4.jpg"  data-gallery="#tpp"></a>
-    </div>
 
 
     <figure class="effect-oscar  wowload fadeInUp short_title">
@@ -347,17 +384,17 @@ $size_cocodrilos=sizeof($result_cocodrilos);
     <figure class="effect-oscar  wowload fadeInUp short_title">
         <img src="images/portadas/3.landscape.jpg" alt="img01"/>
         <figcaption>
-            <h2>Landscape</h2>
+            <h2>Paisajes</h2>
             <?php
                 $first_photo_path_landscape=$dir.$result_landscape[0][2].'/'.$result_landscape[0][3].'/'.$result_landscape[0][1];
                 echo "<p><a href='$first_photo_path_landscape' data-gallery='#landscape'>View more</a></p>"
             ?>
         </figcaption>
     </figure>
-    <figure class="effect-oscar wowload fadeInUp short_title">
+    <figure class="effect-oscar wowload fadeInUp long_title">
         <img src="images/portadas/3.advertise.jpg" alt="img01"/>
         <figcaption>
-            <h2>Advertise</h2>
+            <h2>Encargos profesionales</h2>
             <?php
                 $first_photo_path_advertise=$dir.$result_advertise[0][2].'/'.$result_advertise[0][3].'/'.$result_advertise[0][1];
                 echo "<p><a href='$first_photo_path_advertise' data-gallery='#advertise'>View more</a></p>"
@@ -422,7 +459,7 @@ $size_cocodrilos=sizeof($result_cocodrilos);
         </figcaption>
     </figure>
 
-    <figure class="effect-oscar  wowload fadeInUp">
+    <figure class="effect-oscar  wowload fadeInUp short_title">
         <img src="images/portadas/4.Matahambre2.jpg" alt="img01"/>
         <figcaption>
             <h2>Al sur de Matahambre</h2>
@@ -432,7 +469,7 @@ $size_cocodrilos=sizeof($result_cocodrilos);
             ?>
         </figcaption>
     </figure>
-    <figure class="effect-oscar  wowload fadeInUp ">
+    <figure class="effect-oscar  wowload fadeInUp long_title">
         <img src="images/portadas/4.DoPCocodrilos2.jpg" alt="img01"/>
         <figcaption>
             <h2>Hombres de Cocodrilos</h2>
@@ -521,10 +558,12 @@ $size_cocodrilos=sizeof($result_cocodrilos);
 <!-- Footer Starts -->
 <div id="footer" class="col-md-12 text-center">
         <div class="row social ">
-            <a href="#" class="face wowload fadeInUp"><i class="fa fa-facebook fa-2x"></i></a>
-            <a href="#" class="insta wowload fadeInUp"><i class="fa fa-instagram fa-2x"></i></a>
-            <a href="#" class="twitter wowload fadeInUp"><i class="fa fa-twitter fa-2x"></i></a>
-            <a href="#" class="linkedin wowload fadeInUp"><i class="fa fa-linkedin fa-2x"></i></a>
+            <a href="https://www.facebook.com/Kako.Escalona" class="face wowload fadeInUp"><i class="fa fa-facebook fa-2x"></i></a>
+            <a href="http://instagram.com/kakoescalona" class="insta wowload fadeInUp"><i class="fa fa-instagram fa-2x"></i></a>
+            <a href="http://twitter.com/kakoescalona" class="twitter wowload fadeInUp"><i class="fa fa-twitter fa-2x"></i></a>
+            <a href="https://cu.linkedin.com/in/carlos-ernesto-escalona-mart%C3%AD-a2596887" class="linkedin wowload fadeInUp"><i class="fa fa-linkedin fa-2x"></i></a>
+            <a href="https://twitter.com/KakoEscalona?lang=en" class="flickr wowload fadeInUp"><i class="fa fa-flickr fa-2x"></i></a>
+            <a href="https://deaviaje.wordpress.com/tag/carlos-ernesto-escalona/" class="wordpress wowload fadeInUp"><i class="fa fa-wordpress fa-2x"></i></a>
         </div>
     <div class="row">
         <p>&copy; 2016 Kako Escalona. Todos los derechos reservados.</p>
@@ -541,7 +580,7 @@ $size_cocodrilos=sizeof($result_cocodrilos);
 
 
 <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
-<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" >
     <!-- The container for the modal slides -->
     <div class="slides"></div>
     <!-- Controls for the borderless lightbox -->

@@ -77,46 +77,45 @@ $getfotos_hermosa = mysqli_query($kako, $query_hermosa);
                 <!-- Nav Starts -->
                 <div class="navbar-collapse  collapse">
                     <ul class="nav navbar-nav navbar-right scroll">
-                        <li onclick="go_view('index')"><a >Inicio</a></li>
-                        <li ><a >Acerca de Kako</a></li>
-                        <li ><a >Noticias</a></li>
+                        <li ><a onclick="go_view('index')">Inicio</a></li>
+                        <li ><a onclick="go_tag('index','about')" >Acerca de Kako</a></li>
 
                         <li class=" active dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')"   href="#proyectos">Proyectos<span class="caret"></span></a>
                             <ul class="dropdown-menu" id="dropdown_proyecto" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')">
-                                <li onclick="go_view('common')"><a id="common" >Lugares en Comun</a></li>
+                                <li onclick="go_view('common')"><a id="common" >Lugares Comunes</a></li>
                                 <li onclick="go_view('gente')"><a id="gente">Gente de Cocodrilos</a></li>
-                                <li onclick="go_view('hermosa')"><a id="hermosa">La Tierra mas Hermosa</a></li>
+                                <li onclick="go_view('hermosa')"><a id="hermosa">La Tierra más Hermosa</a></li>
                                 <li onclick="go_view('piotai')"><a  id="piotai">Pio Tai</a></li>
                             </ul>
                         </li>
 
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')"  href="#reportajes">Reportajes<span class="caret" ></span></a>
                             <ul class="dropdown-menu" id="dropdown_reportajes" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')">
-                                <li onclick="go_view('riomaximo')"><a id="riomaximo">Flamencos</a></li>
-                                <li onclick="go_view('remedios')"><a id="remedios">Parrandas de Remedio</a></li>
-                                <li onclick="go_view('baloons')"><a id="baloons">Pescadores</a></li>
+                                <li onclick="go_view('riomaximo')"><a id="riomaximo">Los flamencos Rosados de Río Máximo</a></li>
+                                <li onclick="go_view('remedios')"><a id="remedios">Surreal Cuba: Christmas Rousing</a></li>
+                                <li onclick="go_view('baloons')"><a id="baloons">Rubber match: Men vs. Fish in Cuba</a></li>
                             </ul>
                         </li>
 
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')" href="#ademas">Ademas..<span class="caret" ></span></a>
                             <ul class="dropdown-menu" id="dropdown_ademas" onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')">
-                                <li onclick="go_view('tpp')"><a id="tpp">Travel People and Places</a></li>
-                                <li onclick="go_view('concert')"><a id="concert">Conciertos</a></li>
-                                <li onclick="go_view('landscape')"><a id="landscape">Paisajes</a></li>
-                                <li onclick="go_view('advertise')"><a id="advertise">Publicidad</a></li>
+                                <li onclick="go_view('tpp')"><a >Travel People and Places</a></li>
+                                <li onclick="go_view('concert')"><a >Conciertos</a></li>
+                                <li onclick="go_view('landscape')"><a >Paisajes</a></li>
+                                <li onclick="go_view('advertise')"><a >Publicidad</a></li>
                             </ul>
                         </li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" href="#filmografia">Filmografia <span class="caret"></span> </a>
                             <ul class="dropdown-menu" id="dropdown_film" onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" >
-                                <li onclick="go_view('ellatrabaja')"><a id="ellatrabaja">Ella Trabaja</a></li>
-                                <li onclick="go_view('matahambre')"><a id="matahambre">Al sur de Matahambre</a></li>
-                                <li onclick="go_view('cocodrilos')"><a id="cocodrilos">Hombres de Cocodrilos</a></li>
+                                <li onclick="go_view('ellatrabaja')"><a >Ella Trabaja</a></li>
+                                <li onclick="go_view('matahambre')"><a >Al sur de Matahambre</a></li>
+                                <li onclick="go_view('cocodrilos')"><a >Hombres de Cocodrilos</a></li>
                             </ul>
 
                         </li>
 
                         <!--<li ><a href="#works">Portafolio</a></li>-->
-                        <li ><a href="#contact">Contacto</a></li>
+                        <li ><a onclick="go_tag('index','contact')">Contacto</a></li>
                     </ul>
                 </div>
                 <!-- #Nav Ends -->
@@ -172,10 +171,12 @@ $getfotos_hermosa = mysqli_query($kako, $query_hermosa);
 <!-- Footer Starts -->
 <div id="footer" class="col-md-12 text-center">
     <div class="row social ">
-        <a href="#" class="face wowload fadeInUp"><i class="fa fa-facebook fa-2x"></i></a>
-        <a href="#" class="insta wowload fadeInUp"><i class="fa fa-instagram fa-2x"></i></a>
-        <a href="#" class="twitter wowload fadeInUp"><i class="fa fa-twitter fa-2x"></i></a>
+        <a href="https://www.facebook.com/Kako.Escalona" class="face wowload fadeInUp"><i class="fa fa-facebook fa-2x"></i></a>
+        <a href="http://instagram.com/kakoescalona" class="insta wowload fadeInUp"><i class="fa fa-instagram fa-2x"></i></a>
+        <a href="http://twitter.com/kakoescalona" class="twitter wowload fadeInUp"><i class="fa fa-twitter fa-2x"></i></a>
         <a href="#" class="linkedin wowload fadeInUp"><i class="fa fa-linkedin fa-2x"></i></a>
+        <a href="#" class="flickr wowload fadeInUp"><i class="fa fa-flickr fa-2x"></i></a>
+        <a href="#" class="wordpress wowload fadeInUp"><i class="fa fa-wordpress fa-2x"></i></a>
     </div>
     <div class="row">
         <p>&copy; 2016 Kako Escalona. Todos los derechos reservados.</p>
