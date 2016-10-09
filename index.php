@@ -1,3 +1,57 @@
+<?php
+
+include_once("connetion.php");
+$dir = "./images/portfolio/";
+
+/*the queries*/
+
+/*ADEMAS*/
+/*TPP*/
+$query_tpp="SELECT * FROM fotos WHERE Subcategory='tpp'";
+$getfotos_tpp = mysqli_query($kako, $query_tpp);
+
+//$result_tpp=mysqli_fetch_assoc($getfotos_tpp);
+//$size_tpp=sizeof($result_tpp);
+
+/*CONCIENTOS*/
+$query_concert="SELECT * FROM fotos WHERE Subcategory='concert'";
+$getfotos_concert = mysqli_query($kako, $query_concert);
+$result_concert=mysqli_fetch_assoc($getfotos_concert);
+$size_concert=sizeof($result_concert);
+
+/*PAISAJES*/
+$query_landscape="SELECT * FROM fotos WHERE Subcategory='landscape'";
+$getfotos_landscape = mysqli_query($kako, $query_landscape);
+$result_landscape=mysqli_fetch_assoc($getfotos_landscape);
+$size_landscape=sizeof($result_landscape);
+
+/*publicidad*/
+$query_advertise ="SELECT * FROM fotos WHERE Subcategory='advertise'";
+$getfotos_advertise = mysqli_query($kako, $query_advertise);
+$result_advertise=mysqli_fetch_assoc($getfotos_advertise);
+$size_advertise=sizeof($result_advertise);
+
+/*FILMOGRAFIA*/
+/*ELLA TRABAJA*/
+$query_ellatrabaja="SELECT * FROM fotos WHERE Subcategory='ellatrabaja'";
+$getfotos_ellatrabaja = mysqli_query($kako, $query_ellatrabaja);
+$result_ellatrabaja=mysqli_fetch_assoc($getfotos_ellatrabaja);
+$size_ellatrabaja=sizeof($result_ellatrabaja);
+
+/*MATAHAMBRE*/
+$query_matahambre="SELECT * FROM fotos WHERE Subcategory='matahambre'";
+$getfotos_matahambre = mysqli_query($kako, $query_matahambre);
+$result_matahambre=mysqli_fetch_assoc($getfotos_matahambre);
+$size_matahambre=sizeof($result_matahambre);
+
+/*COCODRILO*/
+$query_cocodrilos="SELECT * FROM fotos WHERE Subcategory='cocodrilos'";
+$getfotos_cocodrilos = mysqli_query($kako, $query_cocodrilos);
+$result_cocodrilos=mysqli_fetch_assoc($getfotos_cocodrilos);
+$size_cocodrilos=sizeof($result_cocodrilos);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,59 +87,6 @@
 
 
 <link rel="stylesheet" href="assets/style.css">
-
-<?php
-
-include_once("connetion.php");
-$dir = "./images/portfolio/";
-
-/*the queries*/
-
-/*ADEMAS*/
-/*TPP*/
-$query_tpp="SELECT * FROM fotos WHERE Subcategory='tpp'";
-$getfotos_tpp = mysqli_query($kako, $query_tpp);
-$result_tpp=mysqli_fetch_all($getfotos_tpp);
-$size_tpp=sizeof($result_tpp);
-
-/*CONCIENTOS*/
-$query_concert="SELECT * FROM fotos WHERE Subcategory='concert'";
-$getfotos_concert = mysqli_query($kako, $query_concert);
-$result_concert=mysqli_fetch_all($getfotos_concert);
-$size_concert=sizeof($result_concert);
-
-/*PAISAJES*/
-$query_landscape="SELECT * FROM fotos WHERE Subcategory='landscape'";
-$getfotos_landscape = mysqli_query($kako, $query_landscape);
-$result_landscape=mysqli_fetch_all($getfotos_landscape);
-$size_landscape=sizeof($result_landscape);
-
-/*publicidad*/
-$query_advertise ="SELECT * FROM fotos WHERE Subcategory='advertise'";
-$getfotos_advertise = mysqli_query($kako, $query_advertise);
-$result_advertise=mysqli_fetch_all($getfotos_advertise);
-$size_advertise=sizeof($result_advertise);
-
-
-/*FILMOGRAFIA*/
-/*ELLA TRABAJA*/
-$query_ellatrabaja="SELECT * FROM fotos WHERE Subcategory='ellatrabaja'";
-$getfotos_ellatrabaja = mysqli_query($kako, $query_ellatrabaja);
-$result_ellatrabaja=mysqli_fetch_all($getfotos_ellatrabaja);
-$size_ellatrabaja=sizeof($result_ellatrabaja);
-
-/*MATAHAMBRE*/
-$query_matahambre="SELECT * FROM fotos WHERE Subcategory='matahambre'";
-$getfotos_matahambre = mysqli_query($kako, $query_matahambre);
-$result_matahambre=mysqli_fetch_all($getfotos_matahambre);
-$size_matahambre=sizeof($result_matahambre);
-
-/*COCODRILO*/
-$query_cocodrilos="SELECT * FROM fotos WHERE Subcategory='cocodrilos'";
-$getfotos_cocodrilos = mysqli_query($kako, $query_cocodrilos);
-$result_cocodrilos=mysqli_fetch_all($getfotos_cocodrilos);
-$size_cocodrilos=sizeof($result_cocodrilos);
-?>
 
 </head>
 
@@ -142,7 +143,8 @@ $size_cocodrilos=sizeof($result_cocodrilos);
                       <ul class="dropdown-menu" id="dropdown_ademas" onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')">
                           <li>
                               <?php
-                              $first_photo_path_tpp=$dir.$result_tpp[0][2].'/'.$result_tpp[0][3].'/'.$result_tpp[0][1];
+                              $result_tpp=mysqli_fetch_assoc($getfotos_tpp);
+                              $first_photo_path_tpp=$dir.$result_tpp['Category'].'/'.$result_tpp['Subcategory'].'/'.$result_tpp['F_name'];
                               echo "<a href='$first_photo_path_tpp' data-gallery='#tpp'>Viajes/Gente/Lugares</a>"
                               ?>
                           </li>
@@ -362,7 +364,8 @@ $size_cocodrilos=sizeof($result_cocodrilos);
         <figcaption>
             <h2>Viajes / Gente       / Lugares</h2>
             <?php
-                $first_photo_path_tpp=$dir.$result_tpp[0][2].'/'.$result_tpp[0][3].'/'.$result_tpp[0][1];
+             $result_tpp=mysqli_fetch_assoc($getfotos_tpp);
+             $first_photo_path_tpp=$dir.$result_tpp['Category'].'/'.$result_tpp['Subcategory'].'/'.$result_tpp['F_name'];
                 echo "<p><a href='$first_photo_path_tpp' data-gallery='#tpp'>View more</a></p>"
 
             ?>
@@ -408,8 +411,9 @@ $size_cocodrilos=sizeof($result_cocodrilos);
 <!--TPP-->
 <div id="links">
     <?php
-    for($i=1;$i<$size_tpp;$i++){
-        $photo_path=$dir.$result_tpp[$i][2].'/'.$result_tpp[$i][3].'/'.$result_tpp[$i][1];
+   
+    while($result_tpp=mysqli_fetch_assoc($getfotos_tpp)){
+        $photo_path=$dir.$result_tpp['Category'].'/'.$result_tpp['Subcategory'].'/'.$result_tpp['F_name'];
         echo "<p><a href='$photo_path' data-gallery='#tpp'></a></p>";
     }
     ?>
