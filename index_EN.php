@@ -3,6 +3,7 @@
 include_once("connetion.php");
 include_once("queries.php");
 $dir = "./images/portfolio/";
+
 ?>
 
 
@@ -15,10 +16,9 @@ $dir = "./images/portfolio/";
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <title>Kako Escalona</title>
 
-    <script src="js/default.js"></script>
+
 
 <!-- font awesome -->
-
 <link href="css/font-awesome.css" rel="stylesheet">
 
 <!-- bootstrap -->
@@ -43,8 +43,6 @@ $dir = "./images/portfolio/";
 
 <link rel="stylesheet" href="assets/style.css">
 
-
-<script> language();</script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="150">
@@ -75,73 +73,73 @@ $dir = "./images/portfolio/";
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right scroll">
-                 <li class="active"><a href="#home">Inicio</a></li>
-                 <li ><a href="#about">Acerca de Kako</a></li>
+                  <li class="active"><a href="#home">Home</a></li>
+                  <li ><a href="#about">About</a></li>
 <!--                  <li ><a href="#news">Noticias</a></li>-->
 
-                  <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')"   href="#proyectos">Proyectos<span class="caret"></span></a>
+                  <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')"   href="#proyectos">Projects<span class="caret"></span></a>
                       <ul class="dropdown-menu" id="dropdown_proyecto" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')">
-                          <li onclick="go_view('common')"><a id="common" >Lugares Comunes</a></li>
-                          <li onclick="go_view('gente')"><a id="gente">Gente de Cocodrilos</a></li>
-                          <li onclick="go_view('hermosa')"><a id="hermosa">La Tierra más Hermosa</a></li>
-                          <li><a  onclick="go_view('piotai')"id="piotai">Pio Tai</a></li>
+                          <li onclick="go_view('common_EN')"><a id="common" >Common Places</a></li>
+                          <li onclick="go_view('gente_EN')"><a id="gente">People of Cocodrilos</a></li>
+                          <li onclick="go_view('hermosa_EN')"><a id="hermosa">The most beautiful land </a></li>
+                          <li><a  onclick="go_view('piotai_EN')"id="piotai">Pio Tai</a></li>
                       </ul>
                   </li>
 
-                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')"  href="#reportajes">Reportajes<span class="caret" ></span></a>
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')"  href="#reportajes">Reportages<span class="caret" ></span></a>
                       <ul class="dropdown-menu" id="dropdown_reportajes" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')">
-                          <li onclick="go_view('riomaximo')"><a id="riomaximo">Los flamencos Rosados de Río Máximo</a></li>
-                          <li onclick="go_view('remedios')"><a id="remedios">Surreal Cuba: Christmas Rousing</a></li>
-                          <li onclick="go_view('baloons')"><a id="baloons">Rubber match: Men vs. Fish in Cuba</a></li>
+                          <li onclick="go_view('riomaximo_EN')"><a id="riomaximo">The pink Flamingos of Maximo's river</a></li>
+                          <li onclick="go_view('remedios_EN')"><a id="remedios">Surreal Cuba: Christmas Rousing</a></li>
+                          <li onclick="go_view('baloons_EN')"><a id="baloons">Rubber match: Men vs. Fish in Cuba</a></li>
                       </ul>
                   </li>
 
-                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')" href="#ademas">Ademas..<span class="caret" ></span></a>
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')" href="#ademas">Also..<span class="caret" ></span></a>
                       <ul class="dropdown-menu" id="dropdown_ademas" onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')">
                           <li>
                               <?php
                                   $result_tpp=mysqli_fetch_assoc($getfotos_tpp);
                                   $first_photo_path_tpp=$dir.$result_tpp['Category'].'/'.$result_tpp['Subcategory'].'/'.$result_tpp['F_name'];
-                                  echo "<a href='$first_photo_path_tpp' data-gallery='#tpp'>Viajes/Gente/Lugares</a>"
+                                  echo "<a href='$first_photo_path_tpp' data-gallery='#tpp'>Travel/People/Places</a>"
                               ?>
                           </li>
                           <li>
                               <?php
                                   $result_concert=mysqli_fetch_assoc($getfotos_concert);
                                   $first_photo_path_concert=$dir.$result_concert['Category'].'/'.$result_concert['Subcategory'].'/'.$result_concert['F_name'];
-                                  echo "<a href='$first_photo_path_concert' data-gallery='#concert'>Conciertos</a>"
+                                  echo "<a href='$first_photo_path_concert' data-gallery='#concert'>Concerts</a>"
                               ?>
                           </li>
                           <li>
                               <?php
                                   $result_landscape=mysqli_fetch_assoc($getfotos_landscape);
                                   $first_photo_path_landscape=$dir.$result_landscape['Category'].'/'.$result_landscape['Subcategory'].'/'.$result_landscape['F_name'];
-                                  echo "<a href='$first_photo_path_landscape' data-gallery='#landscape'>Paisajes</a>"
+                                  echo "<a href='$first_photo_path_landscape' data-gallery='#landscape'>Landscape</a>"
                               ?>
                           </li>
                           <li>
                               <?php
                                   $result_advertise=mysqli_fetch_assoc($getfotos_advertise);
                                   $first_photo_path_advertise=$dir.$result_advertise['Category'].'/'.$result_advertise['Subcategory'].'/'.$result_advertise['F_name'];
-                                  echo "<a href='$first_photo_path_advertise' data-gallery='#advertise'>Encargos Profesionales</a>"
+                                  echo "<a href='$first_photo_path_advertise' data-gallery='#advertise'>Advertise</a>"
                               ?>
                           </li>
                       </ul>
                   </li>
-                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" href="#filmografia">Filmografia <span class="caret"></span> </a>
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" href="#filmografia">Films <span class="caret"></span> </a>
                       <ul class="dropdown-menu" id="dropdown_film" onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" >
                           <li>
                               <?php
                                   $result_ellatrabaja=mysqli_fetch_assoc($getfotos_ellatrabaja);
                                   $first_photo_path_ellatrabaja=$dir.$result_ellatrabaja['Category'].'/'.$result_ellatrabaja['Subcategory'].'/'.$result_ellatrabaja['F_name'];
-                                  echo "<a href='$first_photo_path_ellatrabaja' data-gallery='#ellatrabaja'>Ella Trabaja</a>"
+                                  echo "<a href='$first_photo_path_ellatrabaja' data-gallery='#ellatrabaja'>She Works</a>"
                               ?>
                           </li>
                           <li>
                               <?php
                                   $result_matahambre=mysqli_fetch_assoc($getfotos_matahambre);
                                   $first_photo_path_matahambre=$dir.$result_matahambre['Category'].'/'.$result_matahambre['Subcategory'].'/'.$result_matahambre['F_name'];
-                                  echo "<a href='$first_photo_path_matahambre' data-gallery='#matahambre'>Al sur de Matahambre</a>"
+                                  echo "<a href='$first_photo_path_matahambre' data-gallery='#matahambre'>South of Matahambre</a>"
                               ?>
                           </li>
 
@@ -149,7 +147,7 @@ $dir = "./images/portfolio/";
                               <?php
                                   $result_cocodrilos=mysqli_fetch_assoc($getfotos_cocodrilos);
                                   $first_photo_path_cocodrilos=$dir.$result_cocodrilos['Category'].'/'.$result_cocodrilos['Subcategory'].'/'.$result_cocodrilos['F_name'];
-                                  echo "<a href='$first_photo_path_cocodrilos' data-gallery='#cocodrilos'>Hombres de Cocodrilos</a>"
+                                  echo "<a href='$first_photo_path_cocodrilos' data-gallery='#cocodrilos'>People of Cocodrilos</a>"
                               ?>
                           </li>
                       </ul>
@@ -157,7 +155,7 @@ $dir = "./images/portfolio/";
                   </li>
 
                  <!--<li ><a href="#works">Portafolio</a></li>-->
-                 <li ><a href="#contact">Contacto</a></li>
+                 <li ><a href="#contact">Contact</a></li>
               </ul>
             </div>
             <!-- #Nav Ends -->
@@ -198,19 +196,17 @@ $dir = "./images/portfolio/";
            </div>
 
 
-           <p><strong>La Habana, 21 de Marzo 1984.</strong> Fotógrafo, documentalista y profesor.
-               Graduado en 2008 de la Universidad de las Artes de La Habana.
-               Colaborador de la plataforma digital The Stand Global y las publicaciones periódicas Progreso Semanal, OnCuba y ElToque.
-               Staff de campañas publicitarias para empresas mixtas adjuntas a los ministerios de Turismo y de Agricultura.
-               Still‐man en producciones audiovisuales de la FAMCA, el ICRT y el ICAIC.
-               Participante en la 12ma Bienal de la Habana con la muestra personal “Gente de Cocodrilos”.</p>
+           <p><strong>Havana, March 21, 1984.</strong> Photographer, documentarian, professor. Received as Bachelor in Cinematography at Arts University of Havana (ISA) on 2008.
+               Contributes to “The stand Global” and “Progreso Semanal”. Exhibitor at 12th Biennial of Havana with “Gente de Cocodrilos” (“People of Cocodrilos”).
+               1st place in Landscape in “Naturaleza digital 2014” nature photography contest.
+           </p>
 
-           <p> Director de Fotografía de las películas documentales “Ella Trabaja” (2006), “Al sur de Matahambre” (2008) y “Hombres de Cocodrilos” (2013).
-               Desde 2012 ha impartido el taller “Fotografía Documental” para la Universidad de las Artes, la Facultad de Comunicación de la Universidad de la Habana y la American University (Washington D.C.).
-               Ha dictado charlas y conferencias para American University Nebraska‐Lincoln University y New Jersey College, Universidad de la Habana, Universidad de las Artes, Escuela de Fotografía Creativa de la Habana.</p>
+           <p> Director of Photography in documentary movies  “She Works” (2006), “South of Matahambre”(2008) and “People of Cocodrilos” (2013).
+               From 2012 has taught the workshop “Photojournalism and Social Documentary” at ISA, University of Havana (UH) and American University of Washington D.C (AU). Lecturer in photography for AU, Nebraska-Lincoln University, New Jersey College, UH, ISA, School of Creative Photography of Havana.
+           </p>
 
            <div class="row text-center">
-               <a class="btn btn-primary" href=" CV%20Carlos%20Ernesto%20Escalona.pdf"><i class="fa fa-download"></i> Descargar CV</a>
+               <a class="btn btn-primary" href=" CV%20Carlos%20Ernesto%20Escalona.pdf"><i class="fa fa-download"></i> Download Resume</a>
            </div>
        </div>
 
@@ -257,10 +253,10 @@ $dir = "./images/portfolio/";
 
 <!-- proyectos -->
 <div id="proyectos"  class=" clearfix grid">
-    <figure class="effect-oscar  wowload fadeInUp">
+    <figure class="effect-oscar  wowload fadeInUp long_title">
         <img src="images/portadas/1.common.jpg" alt="img01"/>
         <figcaption>
-            <h2>Lugares Comunes</h2>
+            <h2>Common Places</h2>
             <p><a href="common.php">View more</a></p>
         </figcaption>
     </figure>
@@ -268,7 +264,7 @@ $dir = "./images/portfolio/";
      <figure class="effect-oscar  wowload fadeInUp">
         <img src="images/portadas/1.Gente.jpg" alt="img01"/>
         <figcaption>
-            <h2>Gente de Cocodrilos</h2>
+            <h2>People of Cocodrilos</h2>
             <p><a href="gente.php">View more</a></p>
         </figcaption>
     </figure>
@@ -276,7 +272,7 @@ $dir = "./images/portfolio/";
     <figure class="effect-oscar  wowload fadeInUp">
         <img src="images/portadas/1.hermosa.jpg" alt="img01"/>
         <figcaption>
-            <h2>La tierra mas hermosa</h2>
+            <h2>The most beautiful land</h2>
             <p><a href="hermosa.php">View more</a></p>
         </figcaption>
     </figure>
@@ -293,10 +289,10 @@ $dir = "./images/portfolio/";
 
 <!-- reportages -->
 <div id="reportajes"  class=" clearfix grid">
-    <figure class="effect-oscar  wowload fadeInUp">
+    <figure class="effect-oscar  wowload fadeInUp long_title">
         <img src="images/portadas/Sabana Camaguey 08-2011382.jpg" alt="img01"/>
         <figcaption>
-            <h2>Los flamencos Rosados de Río Máximo</h2>
+            <h2>The pink Flamingos of Maximo river</h2>
             <p><a href="riomaximo.php">View more</a></p>
         </figcaption>
     </figure>
@@ -324,7 +320,8 @@ $dir = "./images/portfolio/";
     <figure class="effect-oscar  wowload fadeInUp long_title">
         <img src="images/portadas/3.tpp.jpg" alt="img01"/>
         <figcaption>
-            <h2>Viajes / Gente       / Lugares</h2>
+            <h2>Travel /People
+                /Places</h2>
             <?php
              $result_tpp=mysqli_fetch_assoc($getfotos_tpp);
              $first_photo_path_tpp=$dir.$result_tpp['Category'].'/'.$result_tpp['Subcategory'].'/'.$result_tpp['F_name'];
@@ -337,7 +334,7 @@ $dir = "./images/portfolio/";
     <figure class="effect-oscar  wowload fadeInUp short_title">
         <img src="images/portadas/3.concerts.jpg" alt="img01"/>
         <figcaption>
-            <h2>Conciertos</h2>
+            <h2>Concerts</h2>
             <?php
                 $result_concert=mysqli_fetch_assoc($getfotos_concert);
                 $first_photo_path_concert=$dir.$result_concert['Category'].'/'.$result_concert['Subcategory'].'/'.$result_concert['F_name'];
@@ -350,7 +347,7 @@ $dir = "./images/portfolio/";
     <figure class="effect-oscar  wowload fadeInUp short_title">
         <img src="images/portadas/3.landscape.jpg" alt="img01"/>
         <figcaption>
-            <h2>Paisajes</h2>
+            <h2>Landscape</h2>
             <?php
                 $result_landscape=mysqli_fetch_assoc($getfotos_landscape);
                 $first_photo_path_landscape=$dir.$result_landscape['Category'].'/'.$result_landscape['Subcategory'].'/'.$result_landscape['F_name'];
@@ -359,10 +356,10 @@ $dir = "./images/portfolio/";
 
         </figcaption>
     </figure>
-    <figure class="effect-oscar wowload fadeInUp long_title">
+    <figure class="effect-oscar wowload fadeInUp short_title">
         <img src="images/portadas/3.advertise.jpg" alt="img01"/>
         <figcaption>
-            <h2>Encargos profesionales</h2>
+            <h2>Advertise</h2>
             <?php
                 $result_advertise=mysqli_fetch_assoc($getfotos_advertise);
                 $first_photo_path_advertise=$dir.$result_advertise['Category'].'/'.$result_advertise['Subcategory'].'/'.$result_advertise['F_name'];
@@ -423,7 +420,7 @@ $dir = "./images/portfolio/";
     <figure class="effect-oscar  wowload fadeInUp short_title ">
         <img src="images/portadas/4.sHeworks1.jpg" alt="img01"/>
         <figcaption>
-            <h2>Ella Trabaja</h2>
+            <h2>She Works</h2>
             <?php
                 $result_ellatrabaja=mysqli_fetch_assoc($getfotos_ellatrabaja);
                 $first_photo_path_ellatrabaja=$dir.$result_ellatrabaja['Category'].'/'.$result_ellatrabaja['Subcategory'].'/'.$result_ellatrabaja['F_name'];
@@ -435,7 +432,7 @@ $dir = "./images/portfolio/";
     <figure class="effect-oscar  wowload fadeInUp short_title">
         <img src="images/portadas/4.Matahambre2.jpg" alt="img01"/>
         <figcaption>
-            <h2>Al sur de Matahambre</h2>
+            <h2>South of Matahambre</h2>
             <?php
                 $result_matahambre=mysqli_fetch_assoc($getfotos_matahambre);
                 $first_photo_path_matahambre=$dir.$result_matahambre['Category'].'/'.$result_matahambre['Subcategory'].'/'.$result_matahambre['F_name'];
@@ -443,10 +440,10 @@ $dir = "./images/portfolio/";
             ?>
         </figcaption>
     </figure>
-    <figure class="effect-oscar  wowload fadeInUp long_title">
+    <figure class="effect-oscar  wowload fadeInUp short_title">
         <img src="images/portadas/4.DoPCocodrilos2.jpg" alt="img01"/>
         <figcaption>
-            <h2>Hombres de Cocodrilos</h2>
+            <h2>People of Cocodrilos</h2>
             <?php
                 $result_cocodrilos=mysqli_fetch_assoc($getfotos_cocodrilos);
                 $first_photo_path_cocodrilos=$dir.$result_cocodrilos['Category'].'/'.$result_cocodrilos['Subcategory'].'/'.$result_cocodrilos['F_name'];
@@ -493,34 +490,34 @@ $dir = "./images/portfolio/";
 
 <!--Contact Begins-->
 <div id="contact" class="spacer">
-<!--Contact Starts-->
+    <!--Contact Starts-->
     <div class="container contactform center">
 
-        <h2 class="text-center  wowload fadeInUp">Contacto</h2>
+        <h2 class="text-center  wowload fadeInUp">Contact</h2>
 
         <div id="contact-form" method="post" action="contacto.php">
 
             <div class="row wowload fadeInLeftBig">
                 <div class="col-sm-6">
-                    <input id="name" type="text"  placeholder="Su nombre *" required="required">
+                    <input id="name" type="text"  placeholder="Your name *" required="required">
                 </div>
 
                 <div class="col-sm-6">
-                      <input id="lastname" type="text"  placeholder="Sus apellidos *" required="required">
+                    <input id="lastname" type="text"  placeholder="Your last name *" required="required">
                 </div>
 
                 <div class="col-sm-6">
-                    <input id="e-mail" type="text"  placeholder="Su correo electronico *" required="required">
+                    <input id="e-mail" type="text"  placeholder="Your email *" required="required">
                 </div>
 
                 <div class="col-sm-6">
-                    <input id="phone" type="text"   placeholder="Su telefono">
+                    <input id="phone" type="text"   placeholder="Your phone number">
                 </div>
                 <div class="col-md-12">
-                    <textarea id="message"  placeholder="Mensaje para mi *" rows="4" required="required"></textarea>
+                    <textarea id="message"  placeholder="Message for me *" rows="4" required="required"></textarea>
                 </div>
                 <div class="col-md-12 text-center">
-                    <button onclick="sendEmail()" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Enviar</button>
+                    <button onclick="sendEmail()" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
                 </div>
             </div>
         </div>
@@ -541,7 +538,7 @@ $dir = "./images/portfolio/";
             <a href="https://deaviaje.wordpress.com/tag/carlos-ernesto-escalona/" class="wordpress wowload fadeInUp"><i class="fa fa-wordpress fa-2x"></i></a>
         </div>
     <div class="row">
-        <p>&copy; 2016 Kako Escalona. Todos los derechos reservados.</p>
+        <p>&copy; 2016 Kako Escalona. All rights reserved.</p>
     </div>
 </div>
 
@@ -610,7 +607,7 @@ $dir = "./images/portfolio/";
 
 
 <!-- email script -->
-
+<script src="js/default.js"></script>
 
 </body>
 </html>
