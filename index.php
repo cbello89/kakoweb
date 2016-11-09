@@ -43,8 +43,6 @@ $dir = "./images/portfolio/";
 
 <link rel="stylesheet" href="assets/style.css">
 
-
-<script> language();</script>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="150">
