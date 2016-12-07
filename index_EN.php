@@ -42,7 +42,7 @@ $dir = "./images/portfolio/";
 
 
 <link rel="stylesheet" href="assets/style.css">
-    <script> language();</script>
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="150">
@@ -202,6 +202,7 @@ $dir = "./images/portfolio/";
            </p>
 
            <p> Director of Photography in documentary movies  “She Works” (2006), “South of Matahambre” (2008) and “People of Cocodrilos” (2013).
+
                From 2012 has taught the workshop “Photojournalism and Social Documentary” at ISA, University of Havana (UH) and American University of Washington D.C (AU). Lecturer in photography for AU, Nebraska-Lincoln University, New Jersey College, UH, ISA, School of Creative Photography of Havana.
            </p>
 
@@ -218,14 +219,20 @@ $dir = "./images/portfolio/";
                </div>
 
                <div class="col-sm-8 text">
-                   <div class="row">Exhibición de la serie fotográfica "Lugares Comunes|Common Places" en el espacio La Pared Negra de la Fabrica de Arte Cubano </div class="row">
+
+                   <div class="row">Exhibición de la serie fotográfica "Lugares Comunes|Common Places" en el espacio La Pared Negra de la Fabrica de Arte Cubano </div>
+
                </div>
            </div>
 
            <div class="row news1">
                <div class="col-sm-4 date1">
+
                    <div class="row first" ><strong>May</strong></div>
                    <div class="row first" ><strong>28</strong></div>
+
+                   <div class="row first" style="font-size: 50px;"><strong>28</strong></div>
+
                    <div class="row second"><strong>2016</strong></div>
                </div>
 
