@@ -39,12 +39,12 @@
 <?php
 
 include_once("connetion.php");
+include_once("queries.php");
 $dir = "./images/portfolio/";
 
 $query_hermosa="SELECT * FROM fotos WHERE Subcategory='hermosa'";
 $getfotos_hermosa = mysqli_query($kako, $query_hermosa);
-//$result_common=mysqli_fetch_all($getfotos_common);
-//$size_common=sizeof($result_common);
+
 
 ?>
 </head>
@@ -99,17 +99,60 @@ $getfotos_hermosa = mysqli_query($kako, $query_hermosa);
 
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')" href="#ademas">Ademas..<span class="caret" ></span></a>
                             <ul class="dropdown-menu" id="dropdown_ademas" onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')">
-                                <li onclick="go_view('tpp')"><a >Travel People and Places</a></li>
-                                <li onclick="go_view('concert')"><a >Conciertos</a></li>
-                                <li onclick="go_view('landscape')"><a >Paisajes</a></li>
-                                <li onclick="go_view('advertise')"><a >Publicidad</a></li>
+                                <li>
+                                    <?php
+                                    $result_tpp=mysqli_fetch_assoc($getfotos_tpp);
+                                    $first_photo_path_tpp=$dir.$result_tpp['Category'].'/'.$result_tpp['Subcategory'].'/'.$result_tpp['F_name'];
+                                    echo "<a href='$first_photo_path_tpp' data-gallery='#tpp'>Viajes/Gente/Lugares</a>"
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    $result_concert=mysqli_fetch_assoc($getfotos_concert);
+                                    $first_photo_path_concert=$dir.$result_concert['Category'].'/'.$result_concert['Subcategory'].'/'.$result_concert['F_name'];
+                                    echo "<a href='$first_photo_path_concert' data-gallery='#concert'>Conciertos</a>"
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    $result_landscape=mysqli_fetch_assoc($getfotos_landscape);
+                                    $first_photo_path_landscape=$dir.$result_landscape['Category'].'/'.$result_landscape['Subcategory'].'/'.$result_landscape['F_name'];
+                                    echo "<a href='$first_photo_path_landscape' data-gallery='#landscape'>Paisajes</a>"
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    $result_advertise=mysqli_fetch_assoc($getfotos_advertise);
+                                    $first_photo_path_advertise=$dir.$result_advertise['Category'].'/'.$result_advertise['Subcategory'].'/'.$result_advertise['F_name'];
+                                    echo "<a href='$first_photo_path_advertise' data-gallery='#advertise'>Encargos Profesionales</a>"
+                                    ?>
+                                </li>
                             </ul>
                         </li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" href="#filmografia">Filmografia <span class="caret"></span> </a>
                             <ul class="dropdown-menu" id="dropdown_film" onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" >
-                                <li onclick="go_view('ellatrabaja')"><a >Ella Trabaja</a></li>
-                                <li onclick="go_view('matahambre')"><a >Al sur de Matahambre</a></li>
-                                <li onclick="go_view('cocodrilos')"><a >Hombres de Cocodrilos</a></li>
+                                <li>
+                                    <?php
+                                    $result_ellatrabaja=mysqli_fetch_assoc($getfotos_ellatrabaja);
+                                    $first_photo_path_ellatrabaja=$dir.$result_ellatrabaja['Category'].'/'.$result_ellatrabaja['Subcategory'].'/'.$result_ellatrabaja['F_name'];
+                                    echo "<a href='$first_photo_path_ellatrabaja' data-gallery='#ellatrabaja'>Ella Trabaja</a>"
+                                    ?>
+                                </li>
+                                <li>
+                                    <?php
+                                    $result_matahambre=mysqli_fetch_assoc($getfotos_matahambre);
+                                    $first_photo_path_matahambre=$dir.$result_matahambre['Category'].'/'.$result_matahambre['Subcategory'].'/'.$result_matahambre['F_name'];
+                                    echo "<a href='$first_photo_path_matahambre' data-gallery='#matahambre'>Al sur de Matahambre</a>"
+                                    ?>
+                                </li>
+
+                                <li>
+                                    <?php
+                                    $result_cocodrilos=mysqli_fetch_assoc($getfotos_cocodrilos);
+                                    $first_photo_path_cocodrilos=$dir.$result_cocodrilos['Category'].'/'.$result_cocodrilos['Subcategory'].'/'.$result_cocodrilos['F_name'];
+                                    echo "<a href='$first_photo_path_cocodrilos' data-gallery='#cocodrilos'>Hombres de Cocodrilos</a>"
+                                    ?>
+                                </li>
                             </ul>
 
                         </li>
@@ -160,12 +203,97 @@ $getfotos_hermosa = mysqli_query($kako, $query_hermosa);
                 }
             ?>
         </div>
-
     </div>
+</div>
 
+<!--las galerias-->
+<!--TPP-->
+<div id="links">
+    <?php
+
+    while($result_tpp=mysqli_fetch_assoc($getfotos_tpp)){
+        $photo_path=$dir.$result_tpp['Category'].'/'.$result_tpp['Subcategory'].'/'.$result_tpp['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#tpp'></a></p>";
+    }
+    ?>
+</div>
+
+<!--CONCIERTOS-->
+<div id="links">
+    <?php
+    while($result_concert=mysqli_fetch_assoc($getfotos_concert)){
+        $photo_path=$dir.$result_concert['Category'].'/'.$result_concert['Subcategory'].'/'.$result_concert['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#concert'></a></p>";
+    }
+    ?>
 
 
 </div>
+
+<!--LANDSCAPE-->
+<div id="links">
+    <?php
+    while($result_landscape=mysqli_fetch_assoc($getfotos_landscape)){
+        $photo_path=$dir.$result_landscape['Category'].'/'.$result_landscape['Subcategory'].'/'.$result_landscape['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#landscape'></a></p>";
+    }
+    ?>
+</div>
+
+<!--ADVERTISE-->
+<div id="links">
+    <?php
+    while($result_advertise=mysqli_fetch_assoc($getfotos_advertise)){
+        $photo_path=$dir.$result_advertise['Category'].'/'.$result_advertise['Subcategory'].'/'.$result_advertise['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#advertise'></a></p>";
+    }
+    ?>
+</div>
+
+
+<!--las galerias-->
+<!--ELLATRABAJA-->
+<div id="links">
+    <?php
+    while($result_ellatrabaja=mysqli_fetch_assoc($getfotos_ellatrabaja)){
+        $photo_path=$dir.$result_ellatrabaja['Category'].'/'.$result_ellatrabaja['Subcategory'].'/'.$result_ellatrabaja['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#ellatrabaja'></a></p>";
+    }
+    ?>
+</div>
+
+<!--MATAHAMBRE-->
+<div id="links">
+    <?php
+    while($result_matahambre=mysqli_fetch_assoc($getfotos_matahambre)){
+        $photo_path=$dir.$result_matahambre['Category'].'/'.$result_matahambre['Subcategory'].'/'.$result_matahambre['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#matahambre'></a></p>";
+    }
+    ?>
+</div>
+
+<!--COCODRILOS-->
+<div id="links">
+    <?php
+    while($result_cocodrilos=mysqli_fetch_assoc($getfotos_cocodrilos)){
+        $photo_path=$dir.$result_cocodrilos['Category'].'/'.$result_cocodrilos['Subcategory'].'/'.$result_cocodrilos['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#cocodrilos'></a></p>";
+    }
+    ?>
+</div>
+
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" >
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title">Title</h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+</div>
+
 
 
 <!-- Footer Starts -->

@@ -46,3 +46,18 @@ function go_tag(view,tag)
 {
     document.location = view.concat('.php').concat('#').concat(tag);
 }
+
+function language (){
+
+    if (navigator.language=="en-US"){
+
+       document.location="index_EN.php"
+
+    } else if (navigator.language=="es"){
+        document.location="index.php"
+
+    } else {
+        document.location="index_EN.php"
+    }
+
+}

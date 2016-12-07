@@ -102,8 +102,8 @@
 
 
 #proyectos figure.effect-oscar figcaption {
-    padding: 15%;
-    /*padding: 10%;*/
+    /*padding: 15%;*/
+    padding: 10%;
     /*	background-color: rgba(58,52,42,0.7);
         -webkit-transition: background-color 0.35s;
         transition: background-color 0.35s;*/
@@ -112,6 +112,10 @@
 
 #proyectos figure.short_title  figcaption{
     padding: 25%;
+}
+
+#proyectos figure.long_title  figcaption{
+    padding-top: 20%;
 }
 
 #proyectos figure.effect-oscar figcaption::before {

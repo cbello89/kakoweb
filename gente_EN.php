@@ -78,54 +78,55 @@ $getfotos_gente = mysqli_query($kako, $query_gente);
                 <!-- Nav Starts -->
                 <div class="navbar-collapse  collapse">
                     <ul class="nav navbar-nav navbar-right scroll">
-                        <li ><a onclick="go_view('index')">Inicio</a></li>
-                        <li ><a onclick="go_tag('index','about')" >Acerca de Kako</a></li>
+                        <li><a onclick="go_view('index_EN')">Home</a></li>
+                        <li ><a onclick="go_tag('index_EN','about')" >About</a></li>
+                        <!--                  <li ><a href="#news">Noticias</a></li>-->
 
-                        <li class=" active dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')"   href="#proyectos">Proyectos<span class="caret"></span></a>
+                        <li class="dropdown active" ><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')"   href="#proyectos">Projects<span class="caret"></span></a>
                             <ul class="dropdown-menu" id="dropdown_proyecto" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')">
-                                <li onclick="go_view('common')"><a id="common" >Lugares Comunes</a></li>
-                                <li onclick="go_view('gente')"><a id="gente">Gente de Cocodrilos</a></li>
-                                <li onclick="go_view('hermosa')"><a id="hermosa">La Tierra más Hermosa</a></li>
-                                <li onclick="go_view('piotai')"><a  id="piotai">Pio Tai</a></li>
+                                <li onclick="go_view('common_EN')"><a id="common" >Common Places</a></li>
+                                <li onclick="go_view('gente_EN')"><a id="gente">People of Cocodrilos</a></li>
+                                <li onclick="go_view('hermosa_EN')"><a id="hermosa">The most beautiful land </a></li>
+                                <li><a  onclick="go_view('piotai_EN')"id="piotai">Pio Tai</a></li>
                             </ul>
                         </li>
 
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')"  href="#reportajes">Reportajes<span class="caret" ></span></a>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')"  href="#reportajes">Reportages<span class="caret" ></span></a>
                             <ul class="dropdown-menu" id="dropdown_reportajes" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')">
-                                <li onclick="go_view('riomaximo')"><a id="riomaximo">Los flamencos Rosados de Río Máximo</a></li>
-                                <li onclick="go_view('remedios')"><a id="remedios">Surreal Cuba: Christmas Rousing</a></li>
-                                <li onclick="go_view('baloons')"><a id="baloons">Rubber match: Men vs. Fish in Cuba</a></li>
+                                <li onclick="go_view('riomaximo_EN')"><a id="riomaximo">The pink Flamingos of Maximo's river</a></li>
+                                <li onclick="go_view('remedios_EN')"><a id="remedios">Surreal Cuba: Christmas Rousing</a></li>
+                                <li onclick="go_view('baloons_EN')"><a id="baloons">Rubber match: Men vs. Fish in Cuba</a></li>
                             </ul>
                         </li>
 
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')" href="#ademas">Ademas..<span class="caret" ></span></a>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')" href="#ademas">Also..<span class="caret" ></span></a>
                             <ul class="dropdown-menu" id="dropdown_ademas" onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')">
                                 <li>
                                     <?php
                                     $result_tpp=mysqli_fetch_assoc($getfotos_tpp);
                                     $first_photo_path_tpp=$dir.$result_tpp['Category'].'/'.$result_tpp['Subcategory'].'/'.$result_tpp['F_name'];
-                                    echo "<a href='$first_photo_path_tpp' data-gallery='#tpp'>Viajes/Gente/Lugares</a>"
+                                    echo "<a href='$first_photo_path_tpp' data-gallery='#tpp'>Travel/People/Places</a>"
                                     ?>
                                 </li>
                                 <li>
                                     <?php
                                     $result_concert=mysqli_fetch_assoc($getfotos_concert);
                                     $first_photo_path_concert=$dir.$result_concert['Category'].'/'.$result_concert['Subcategory'].'/'.$result_concert['F_name'];
-                                    echo "<a href='$first_photo_path_concert' data-gallery='#concert'>Conciertos</a>"
+                                    echo "<a href='$first_photo_path_concert' data-gallery='#concert'>Concerts</a>"
                                     ?>
                                 </li>
                                 <li>
                                     <?php
                                     $result_landscape=mysqli_fetch_assoc($getfotos_landscape);
                                     $first_photo_path_landscape=$dir.$result_landscape['Category'].'/'.$result_landscape['Subcategory'].'/'.$result_landscape['F_name'];
-                                    echo "<a href='$first_photo_path_landscape' data-gallery='#landscape'>Paisajes</a>"
+                                    echo "<a href='$first_photo_path_landscape' data-gallery='#landscape'>Landscape</a>"
                                     ?>
                                 </li>
                                 <li>
                                     <?php
                                     $result_advertise=mysqli_fetch_assoc($getfotos_advertise);
                                     $first_photo_path_advertise=$dir.$result_advertise['Category'].'/'.$result_advertise['Subcategory'].'/'.$result_advertise['F_name'];
-                                    echo "<a href='$first_photo_path_advertise' data-gallery='#advertise'>Encargos Profesionales</a>"
+                                    echo "<a href='$first_photo_path_advertise' data-gallery='#advertise'>Advertise</a>"
                                     ?>
                                 </li>
                             </ul>
@@ -136,14 +137,14 @@ $getfotos_gente = mysqli_query($kako, $query_gente);
                                     <?php
                                     $result_ellatrabaja=mysqli_fetch_assoc($getfotos_ellatrabaja);
                                     $first_photo_path_ellatrabaja=$dir.$result_ellatrabaja['Category'].'/'.$result_ellatrabaja['Subcategory'].'/'.$result_ellatrabaja['F_name'];
-                                    echo "<a href='$first_photo_path_ellatrabaja' data-gallery='#ellatrabaja'>Ella Trabaja</a>"
+                                    echo "<a href='$first_photo_path_ellatrabaja' data-gallery='#ellatrabaja'>She Works</a>"
                                     ?>
                                 </li>
                                 <li>
                                     <?php
                                     $result_matahambre=mysqli_fetch_assoc($getfotos_matahambre);
                                     $first_photo_path_matahambre=$dir.$result_matahambre['Category'].'/'.$result_matahambre['Subcategory'].'/'.$result_matahambre['F_name'];
-                                    echo "<a href='$first_photo_path_matahambre' data-gallery='#matahambre'>Al sur de Matahambre</a>"
+                                    echo "<a href='$first_photo_path_matahambre' data-gallery='#matahambre'>South of Matahambre</a>"
                                     ?>
                                 </li>
 
@@ -151,7 +152,7 @@ $getfotos_gente = mysqli_query($kako, $query_gente);
                                     <?php
                                     $result_cocodrilos=mysqli_fetch_assoc($getfotos_cocodrilos);
                                     $first_photo_path_cocodrilos=$dir.$result_cocodrilos['Category'].'/'.$result_cocodrilos['Subcategory'].'/'.$result_cocodrilos['F_name'];
-                                    echo "<a href='$first_photo_path_cocodrilos' data-gallery='#cocodrilos'>Hombres de Cocodrilos</a>"
+                                    echo "<a href='$first_photo_path_cocodrilos' data-gallery='#cocodrilos'>People of Cocodrilos</a>"
                                     ?>
                                 </li>
                             </ul>
@@ -159,7 +160,7 @@ $getfotos_gente = mysqli_query($kako, $query_gente);
                         </li>
 
                         <!--<li ><a href="#works">Portafolio</a></li>-->
-                        <li ><a onclick="go_tag('index','contact')">Contacto</a></li>
+                        <li ><a  onclick="go_tag('index_EN','contact')">Contact</a></li>
                     </ul>
                 </div>
                 <!-- #Nav Ends -->
@@ -176,29 +177,27 @@ $getfotos_gente = mysqli_query($kako, $query_gente);
     <div class="row">
         <div class="col-md-6">
             <div class="row wowload fadeInLeft">
-                <h2 class="text-center wowload fadeInUp">Gente de Cocodrilos</h2>
+                <h2 class="text-center wowload fadeInUp">People of Cocodrilos</h2>
             </div>
             <div class="row wowload fadeInLeft">
-                <p><strong>(2013) </strong>Serie de retratos de diez habitantes de poblado a punto de desaparecer. Ubicado en lo
-                    profundo de la Ciénaga de Zapata, “Cocodrilos” es uno de los sitios en Cuba de naturaleza más hostil a la vida humana.
-                    En el año 2002, la zona fue declarada Área Natural Protegida, lo que provocó que fuera prohibida la fabricación de
-                    carbón, actividad económica fundamental del pueblo durante siglos. Negados a abandonar su tierra, un grupo pequeño
-                    de personas recurre a las formas más elementales de supervivencia. El uso del retrato ambiental no solo muestra los
-                    rostros, sino también el vestuario y las herramientas de trabajo de los cenagueros. Gente de Cocodrilos es un
-                    homenaje al valor de quienes persisten en no abandonar su tierra.</p>
+                <p><strong>(2013) </strong>A series of portraits shows ten villagers of a hamlet on the way to disappear. Located
+                    deep inside Zapata Swamp, Cocodrilos is one of the hardest places to live in Cuba. In 2002 the zone was declared
+                    Natural Reserve. The coal production practiced by generations, became banned. Refused to leave their land, near one
+                    hundred people remains on the village, most of the times practicing basic survival techniques. “People of Cocodrilos” is
+                    a tribute to the courage of the people who most
+                    of all-refuses to abandon their land.</p>
 
-                <p>La idea de realizar el proyecto Gente de Cocodrilos parte de las vivencias adquiridas durante la filmacion del documental
-                    Hombres de Cocodrilos (Dir. Livan Magdaleno, 2013) El objetivo es mostrar como evidencia gráfica las difíciles
-                    condiciones de vida de esa comunidad de la Ciénaga de Zapata. La propuesta consiste en una serie de ratratos de
-                    personajes tipos que, si bien reflejan la particularidad del entorno, trascienden esa condición para convertirse en
-                    representaciones de lo humano. A pesar del sustrato documental, las piezas contienen una alta dosis conceptual y
-                    simbólica verificable en sus diferentes niveles de lectura. (Catálogo de “Zona Franca”, exhibiciones colaterales a la XII
-                    Bienal de La Habana)</p>
+                <p>The idea of carrying out the project “Gente de Cocodrilos” (”People of Cocodrilos” ) is based on the experiences
+                    gained during the filming of the documentary movie “Hombres de Cocodrilos” (director Liván Magdaleno, 2013). The
+                    purpose is to show as graphic evidence the dificult living conditions of that comunity in the Ciénaga de Zapata (Zapata
+                    Swamp). The proposal consist of a series of portraits of type-characters who, although they show on the distinctiveness of the environment, go beyond that condition to become representations of the human element. Despite the documentary
+                    substrate, the pieces have a high conceptual and symbolical content, verifiable in their different reading levels.
+                    (Catalog of “Zona Franca”, Collateral exhibitions at XII Biennial of Havana)</p>
             </div>
 
             <div class="row wowload fadeInLeft">
                 <div class="col-md-12 text-center ">
-                    <a class="btn btn-primary" href="./images/pdf/002%20Gente%20de%20Cocodrilos%20ES%20web.pdf"><i class="fa fa-download"></i> Descargar PDF</a>
+                    <a class="btn btn-primary" href="./images/pdf/002%20Gente%20de%20Cocodrilos%20EN%20web.pdf"><i class="fa fa-download"></i> Download PDF</a>
                 </div>
             </div>
 
@@ -213,9 +212,9 @@ $getfotos_gente = mysqli_query($kako, $query_gente);
             }
             ?>
         </div>
-
     </div>
 </div>
+
 
 <!--las galerias-->
 <!--TPP-->
@@ -305,19 +304,18 @@ $getfotos_gente = mysqli_query($kako, $query_gente);
     <!-- The modal dialog, which will be used to wrap the lightbox content -->
 </div>
 
-
 <!-- Footer Starts -->
 <div id="footer" class="col-md-12 text-center">
     <div class="row social ">
         <a href="https://www.facebook.com/Kako.Escalona" class="face wowload fadeInUp"><i class="fa fa-facebook fa-2x"></i></a>
         <a href="http://instagram.com/kakoescalona" class="insta wowload fadeInUp"><i class="fa fa-instagram fa-2x"></i></a>
         <a href="http://twitter.com/kakoescalona" class="twitter wowload fadeInUp"><i class="fa fa-twitter fa-2x"></i></a>
-        <a href="#" class="linkedin wowload fadeInUp"><i class="fa fa-linkedin fa-2x"></i></a>
-        <a href="#" class="flickr wowload fadeInUp"><i class="fa fa-flickr fa-2x"></i></a>
-        <a href="#" class="wordpress wowload fadeInUp"><i class="fa fa-wordpress fa-2x"></i></a>
+        <a href="https://cu.linkedin.com/in/carlos-ernesto-escalona-mart%C3%AD-a2596887" class="linkedin wowload fadeInUp"><i class="fa fa-linkedin fa-2x"></i></a>
+        <a href="https://twitter.com/KakoEscalona?lang=en" class="flickr wowload fadeInUp"><i class="fa fa-flickr fa-2x"></i></a>
+        <a href="https://deaviaje.wordpress.com/tag/carlos-ernesto-escalona/" class="wordpress wowload fadeInUp"><i class="fa fa-wordpress fa-2x"></i></a>
     </div>
     <div class="row">
-        <p>&copy; 2016 Kako Escalona. Todos los derechos reservados.</p>
+        <p>&copy; 2016 Kako Escalona. All rights reserved.</p>
     </div>
 </div>
 
