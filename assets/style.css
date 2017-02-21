@@ -89,7 +89,8 @@ p{font-size:1em;line-height: 1.7em; margin: 2em;}
 {
     width: 300px;
     height: 300px;
-    margin-top: 130px;
+    /*margin-top: 130px;*/
+    margin-top: 150px;
     padding-left: 25px;
     margin-left: 30px;
 }
@@ -141,7 +142,8 @@ p{font-size:1em;line-height: 1.7em; margin: 2em;}
 }
 .news1 {
 
-    margin-top: 50px;
+    /*margin-top: 50px;*/
+    margin-top: 30px;
 }
 
 
@@ -228,7 +230,65 @@ p{font-size:1em;line-height: 1.7em; margin: 2em;}
 
 
 @media (max-width: 767px) {
-	body{font:300 12px/12px Roboto,Arial,Helvetica;}
+	/*body{font:300 12px/12px Roboto,Arial,Helvetica;}*/
+
+/*I added this because I had it in a commit but if it doesn't work I have to remove it!!*/
+
+body{font:300 15px/15px Roboto,Arial,Helvetica;}
+
+    #about .profile_photo
+    {
+        width: 300px;
+        height: 300px;
+        margin-top: 15px;
+        padding-left: 0px;
+        margin-left: 75px;
+    }
+
+    .first{
+        font-size: 40px;
+        padding-bottom: 15px;
+    }
+
+    .second{
+        font-size: 30px;
+    }
+
+    .news{
+
+        margin-top: 80px;
+    }
+    .news1 {
+
+        margin-top: 30px;
+    }
+
+
+    .date{
+        margin-top: 20px;
+        padding-left: 25px;
+    }
+    .date1 {
+        margin-top: 35px;
+        padding-left: 25px;
+    }
+
+    .text {
+        padding-left: 25px;
+        padding-right: 20px;
+        padding-top: 15px;
+        font-size: 15px;
+        text-align: justify;
+    }
+
+
+    .date_month {
+        font-size: 30px;
+        padding-bottom: 15px;
+    }
+
+/*up to this point!!*/
+
 	.navbar-nav > li > a {line-height: 1em;}	
 	.navbar-brand{padding: 7px;}
 	.navbar-brand img{height: 37px;}
@@ -236,19 +296,20 @@ p{font-size:1em;line-height: 1.7em; margin: 2em;}
 
 	.carousel-caption,.carousel-control,.carousel-indicators{display: none;}
 
-	h2.text-center{text-align: center;font-size: 1.7em;}
+	/*h2.text-center{text-align: center;font-size: 1.7em;}*/
+    
+    h2.text-center{text-align: center;font-size: 1.8em;}
+    
 	h4 {font: 300 1.2em Roboto,Arial,Helvetica;}
-	#partners h2{padding: 0 1em;} 
-	#home {padding-top: 5em;}
 
-	.partners{display: block;float: left;}
-	.partners img{width: 120px;}
-
-
-
-	.about.spacer{padding-left: 2em;padding-right: 2em;}
+    /*I added this to see what happen*/
+    #home {padding-top: 4em}
+	
+    .about.spacer{padding-left: 2em;padding-right: 2em;}
 	.spacer{padding:1em 0 0 0;}
-	.services ul li{margin-bottom: 1em;}
+	
+    /*because I don't have services*/
+    /*.services ul li{margin-bottom: 1em;}*/
 
 	.highlight-info .overlay{padding-bottom: 2em;}
 

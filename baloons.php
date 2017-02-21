@@ -160,7 +160,7 @@ $getfotos_baloons = mysqli_query($kako, $query_baloons);
                         </li>
 
                         <!--<li ><a href="#works">Portafolio</a></li>-->
-                        <li ><a href="#contact">Contacto</a></li>
+                        <li ><a onclick="go_tag('index','contact')">Contacto</a></li>
                     </ul>
                 </div>
                 <!-- #Nav Ends -->
