@@ -39,12 +39,13 @@
 <?php
 
 include_once("connetion.php");
+include_once("queries.php");
 $dir = "./images/portfolio/";
 
 $query_remedios="SELECT * FROM fotos WHERE Subcategory='remedios'";
 $getfotos_remedios = mysqli_query($kako, $query_remedios);
-//$result_common=mysqli_fetch_all($getfotos_common);
-//$size_common=sizeof($result_common);
+
+
 
 ?>
 </head>
@@ -77,9 +78,8 @@ $getfotos_remedios = mysqli_query($kako, $query_remedios);
                 <!-- Nav Starts -->
                 <div class="navbar-collapse  collapse">
                     <ul class="nav navbar-nav navbar-right scroll">
-                        <li><a onclick="go_view('index_EN')">Home</a></li>
+                        <li ><a onclick="go_view('index_EN')">Home</a></li>
                         <li ><a onclick="go_tag('index_EN','about')" >About</a></li>
-                        <!--                  <li ><a href="#news">Noticias</a></li>-->
 
                         <li class="dropdown" ><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')"   href="#proyectos">Projects<span class="caret"></span></a>
                             <ul class="dropdown-menu" id="dropdown_proyecto" onmouseover="show_dropdown('dropdown_proyecto')" onmouseout="hide_dropdown('dropdown_proyecto')">
@@ -90,33 +90,79 @@ $getfotos_remedios = mysqli_query($kako, $query_remedios);
                             </ul>
                         </li>
 
-                        <li class="dropdown  active"><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')"  href="#reportajes">Reportages<span class="caret" ></span></a>
-                            <ul class="dropdown-menu" id="dropdown_reportajes" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')">
-                                <li onclick="go_view('riomaximo_EN')"><a id="riomaximo">The pink Flamingos of Maximo's river</a></li>
-                                <li onclick="go_view('remedios_EN')"><a id="remedios">Surreal Cuba: Christmas Rousing</a></li>
-                                <li onclick="go_view('baloons_EN')"><a id="baloons">Rubber match: Men vs. Fish in Cuba</a></li>
-                            </ul>
-                        </li>
 
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')" href="#ademas">Also..<span class="caret" ></span></a>
-                            <ul class="dropdown-menu" id="dropdown_ademas" onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')">
-                                <li><a>Travel/People/Places</a></li>
-                                <li><a>Concerts</a></li>
-                                <li><a>Landscape</a></li>
-                                <li><a>Advertise</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" href="#filmografia">Film <span class="caret"></span> </a>
-                            <ul class="dropdown-menu" id="dropdown_film" onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" >
-                                <li><a>She Works</a></li>
-                                <li><a>South of Matahambre</a></li>
-                                <li><a>People of Cocodrilos</a></li>
-                            </ul>
+                 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')"  href="#reportajes">Reportages<span class="caret" ></span></a>
+                      <ul class="dropdown-menu" id="dropdown_reportajes" onmouseover="show_dropdown('dropdown_reportajes')" onmouseout="hide_dropdown('dropdown_reportajes')">
+                          <li onclick="go_view('riomaximo_EN')"><a id="riomaximo">The pink Flamingos of Maximo's river</a></li>
+                          <li onclick="go_view('remedios_EN')"><a id="remedios">Surreal Cuba: Christmas Rousing</a></li>
+                          <li onclick="go_view('baloons_EN')"><a id="baloons">Rubber match: Men vs. Fish in Cuba</a></li>
+                      </ul>
+                  </li>
 
-                        </li>
+
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')" href="#ademas">Also..<span class="caret" ></span></a>
+                      <ul class="dropdown-menu" id="dropdown_ademas" onmouseover="show_dropdown('dropdown_ademas')" onmouseout="hide_dropdown('dropdown_ademas')">
+                          <li>
+                              <?php
+                                  $result_tpp=mysqli_fetch_assoc($getfotos_tpp);
+                                  $first_photo_path_tpp=$dir.$result_tpp['Category'].'/'.$result_tpp['Subcategory'].'/'.$result_tpp['F_name'];
+                                  echo "<a href='$first_photo_path_tpp' data-gallery='#tpp'>Travel/People/Places</a>"
+                              ?>
+                          </li>
+                          <li>
+                              <?php
+                                  $result_concert=mysqli_fetch_assoc($getfotos_concert);
+                                  $first_photo_path_concert=$dir.$result_concert['Category'].'/'.$result_concert['Subcategory'].'/'.$result_concert['F_name'];
+                                  echo "<a href='$first_photo_path_concert' data-gallery='#concert'>Concerts</a>"
+                              ?>
+                          </li>
+                          <li>
+                              <?php
+                                  $result_landscape=mysqli_fetch_assoc($getfotos_landscape);
+                                  $first_photo_path_landscape=$dir.$result_landscape['Category'].'/'.$result_landscape['Subcategory'].'/'.$result_landscape['F_name'];
+                                  echo "<a href='$first_photo_path_landscape' data-gallery='#landscape'>Landscape</a>"
+                              ?>
+                          </li>
+                          <li>
+                              <?php
+                                  $result_advertise=mysqli_fetch_assoc($getfotos_advertise);
+                                  $first_photo_path_advertise=$dir.$result_advertise['Category'].'/'.$result_advertise['Subcategory'].'/'.$result_advertise['F_name'];
+                                  echo "<a href='$first_photo_path_advertise' data-gallery='#advertise'>Advertise</a>"
+                              ?>
+                          </li>
+                      </ul>
+                  </li>
+                        
+                       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" href="#filmografia">Films <span class="caret"></span> </a>
+                      <ul class="dropdown-menu" id="dropdown_film" onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" >
+                          <li>
+                              <?php
+                                  $result_ellatrabaja=mysqli_fetch_assoc($getfotos_ellatrabaja);
+                                  $first_photo_path_ellatrabaja=$dir.$result_ellatrabaja['Category'].'/'.$result_ellatrabaja['Subcategory'].'/'.$result_ellatrabaja['F_name'];
+                                  echo "<a href='$first_photo_path_ellatrabaja' data-gallery='#ellatrabaja'>She Works</a>"
+                              ?>
+                          </li>
+                          <li>
+                              <?php
+                                  $result_matahambre=mysqli_fetch_assoc($getfotos_matahambre);
+                                  $first_photo_path_matahambre=$dir.$result_matahambre['Category'].'/'.$result_matahambre['Subcategory'].'/'.$result_matahambre['F_name'];
+                                  echo "<a href='$first_photo_path_matahambre' data-gallery='#matahambre'>South of Matahambre</a>"
+                              ?>
+                          </li>
+
+                          <li>
+                              <?php
+                                  $result_cocodrilos=mysqli_fetch_assoc($getfotos_cocodrilos);
+                                  $first_photo_path_cocodrilos=$dir.$result_cocodrilos['Category'].'/'.$result_cocodrilos['Subcategory'].'/'.$result_cocodrilos['F_name'];
+                                  echo "<a href='$first_photo_path_cocodrilos' data-gallery='#cocodrilos'>People of Cocodrilos</a>"
+                              ?>
+                          </li>
+                      </ul>
+
+                  </li>
 
                         <!--<li ><a href="#works">Portafolio</a></li>-->
-                        <li ><a  onclick="go_tag('index_EN','contact')">Contact</a></li>
+                        <li ><a onclick="go_tag('index_EN','contact')">Contact</a></li>
                     </ul>
                 </div>
                 <!-- #Nav Ends -->
@@ -136,14 +182,12 @@ $getfotos_remedios = mysqli_query($kako, $query_remedios);
                 <h2 class="text-center wowload fadeInUp" style="margin-left: 15px">Surreal Cuba: Christmas Rousing</h2>
             </div>
             <div class="row wowload fadeInLeft">
-                <p>Desde que la celebración surgió en Remedios (200 millas al este La Habana) se ha replicado en otros pueblos del centro de Cuba.
-                    El evento es parte espectáculo de Las Vegas, parte Carnaval de Venecia, parte Festival de Fuegos Artificiales de San Sebastián.
-                    Durante un año entero, los dos barrios de Remedios trabajan en secreto para producir las carrozas más elaboradas, los mejores trabajos de plaza, y la mayor pirotecnia.</p>
+                <p>Once only found in Remedios, about 200 miles east of Havana, the celebration has been duplicated in towns in central Cuba. The celebration and competition is part Mardi Gras, par Fourth of July, part Carnival, as communities work in secrecy to build the most elaborated floats and concoct the most impressive firework displays.</p>
             </div>
 
             <div class="row wowload fadeInLeft">
                 <div class="col-md-12 text-center ">
-                    <a class="btn btn-primary" href="https://thestandglobal.com/surreal-cuba-christmas-rousing/"><i class="fa fa-sign-in"></i> Ir al Reportaje</a>
+                    <a class="btn btn-primary" href="https://thestandglobal.com/surreal-cuba-christmas-rousing/"><i class="fa fa-sign-in"></i> Go to the reportage</a>
                 </div>
             </div>
 
@@ -158,11 +202,95 @@ $getfotos_remedios = mysqli_query($kako, $query_remedios);
                 }
             ?>
         </div>
-
     </div>
+</div>
+
+<!--las galerias-->
+<!--TPP-->
+<div id="links">
+    <?php
+
+    while($result_tpp=mysqli_fetch_assoc($getfotos_tpp)){
+        $photo_path=$dir.$result_tpp['Category'].'/'.$result_tpp['Subcategory'].'/'.$result_tpp['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#tpp'></a></p>";
+    }
+    ?>
+</div>
+
+<!--CONCIERTOS-->
+<div id="links">
+    <?php
+    while($result_concert=mysqli_fetch_assoc($getfotos_concert)){
+        $photo_path=$dir.$result_concert['Category'].'/'.$result_concert['Subcategory'].'/'.$result_concert['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#concert'></a></p>";
+    }
+    ?>
 
 
+</div>
 
+<!--LANDSCAPE-->
+<div id="links">
+    <?php
+    while($result_landscape=mysqli_fetch_assoc($getfotos_landscape)){
+        $photo_path=$dir.$result_landscape['Category'].'/'.$result_landscape['Subcategory'].'/'.$result_landscape['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#landscape'></a></p>";
+    }
+    ?>
+</div>
+
+<!--ADVERTISE-->
+<div id="links">
+    <?php
+    while($result_advertise=mysqli_fetch_assoc($getfotos_advertise)){
+        $photo_path=$dir.$result_advertise['Category'].'/'.$result_advertise['Subcategory'].'/'.$result_advertise['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#advertise'></a></p>";
+    }
+    ?>
+</div>
+
+
+<!--las galerias-->
+<!--ELLATRABAJA-->
+<div id="links">
+    <?php
+    while($result_ellatrabaja=mysqli_fetch_assoc($getfotos_ellatrabaja)){
+        $photo_path=$dir.$result_ellatrabaja['Category'].'/'.$result_ellatrabaja['Subcategory'].'/'.$result_ellatrabaja['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#ellatrabaja'></a></p>";
+    }
+    ?>
+</div>
+
+<!--MATAHAMBRE-->
+<div id="links">
+    <?php
+    while($result_matahambre=mysqli_fetch_assoc($getfotos_matahambre)){
+        $photo_path=$dir.$result_matahambre['Category'].'/'.$result_matahambre['Subcategory'].'/'.$result_matahambre['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#matahambre'></a></p>";
+    }
+    ?>
+</div>
+
+<!--COCODRILOS-->
+<div id="links">
+    <?php
+    while($result_cocodrilos=mysqli_fetch_assoc($getfotos_cocodrilos)){
+        $photo_path=$dir.$result_cocodrilos['Category'].'/'.$result_cocodrilos['Subcategory'].'/'.$result_cocodrilos['F_name'];
+        echo "<p><a href='$photo_path' data-gallery='#cocodrilos'></a></p>";
+    }
+    ?>
+</div>
+
+
+<div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" >
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title">Title</h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
 </div>
 
 
@@ -172,12 +300,12 @@ $getfotos_remedios = mysqli_query($kako, $query_remedios);
         <a href="https://www.facebook.com/Kako.Escalona" class="face wowload fadeInUp"><i class="fa fa-facebook fa-2x"></i></a>
         <a href="http://instagram.com/kakoescalona" class="insta wowload fadeInUp"><i class="fa fa-instagram fa-2x"></i></a>
         <a href="http://twitter.com/kakoescalona" class="twitter wowload fadeInUp"><i class="fa fa-twitter fa-2x"></i></a>
-        <a href="https://cu.linkedin.com/in/carlos-ernesto-escalona-mart%C3%AD-a2596887" class="linkedin wowload fadeInUp"><i class="fa fa-linkedin fa-2x"></i></a>
-        <a href="https://twitter.com/KakoEscalona?lang=en" class="flickr wowload fadeInUp"><i class="fa fa-flickr fa-2x"></i></a>
-        <a href="https://deaviaje.wordpress.com/tag/carlos-ernesto-escalona/" class="wordpress wowload fadeInUp"><i class="fa fa-wordpress fa-2x"></i></a>
+        <a href="#" class="linkedin wowload fadeInUp"><i class="fa fa-linkedin fa-2x"></i></a>
+        <a href="#" class="flickr wowload fadeInUp"><i class="fa fa-flickr fa-2x"></i></a>
+        <a href="#" class="wordpress wowload fadeInUp"><i class="fa fa-wordpress fa-2x"></i></a>
     </div>
     <div class="row">
-        <p>&copy; 2016 Kako Escalona. All rights reserved.</p>
+        <p>&copy; 2016 Kako Escalona. Todos los derechos reservados.</p>
     </div>
 </div>
 
