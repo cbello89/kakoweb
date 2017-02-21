@@ -217,7 +217,7 @@ $dir = "./images/portfolio/";
        <div class="col-sm-3">
            <div class="row news">
                <div class="col-sm-4 date">
-                   <div class="row first"><strong>Feb</strong></div>
+                   <div class="row first"><strong>Ago</strong></div>
                    <div class="row second"><strong>2017</strong></div>
                </div>
 

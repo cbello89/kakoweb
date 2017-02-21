@@ -126,6 +126,7 @@ $dir = "./images/portfolio/";
                           </li>
                       </ul>
                   </li>
+                  
                   <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown"  onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" href="#filmografia">Films <span class="caret"></span> </a>
                       <ul class="dropdown-menu" id="dropdown_film" onmouseover="show_dropdown('dropdown_film')" onmouseout="hide_dropdown('dropdown_film')" >
                           <li>
@@ -214,7 +215,7 @@ $dir = "./images/portfolio/";
        <div class="col-sm-3">
            <div class="row news">
                <div class="col-sm-4 date">
-                   <div class="row first"><strong>Feb</strong></div>
+                   <div class="row first"><strong>Aug</strong></div>
                    <div class="row second"><strong>2017</strong></div>
                </div>
 
@@ -228,10 +229,8 @@ $dir = "./images/portfolio/";
            <div class="row news1">
                <div class="col-sm-4 date1">
 
-                   <div class="row first" ><strong>May</strong></div>
-                   <div class="row first" ><strong>28</strong></div>
-
-                   <div class="row first" style="font-size: 50px;"><strong>28</strong></div>
+                   <div class="row first" style="font-size: 30px;"><strong>May</strong></div>
+                   <div class="row first" style="font-size: 30px"><strong>28</strong></div>
 
                    <div class="row second"><strong>2016</strong></div>
                </div>
@@ -264,7 +263,7 @@ $dir = "./images/portfolio/";
         <img src="images/portadas/1.common.jpg" alt="img01"/>
         <figcaption>
             <h2>Common Places</h2>
-            <p><a href="common.php">View more</a></p>
+            <p><a href="common_EN.php">View more</a></p>
         </figcaption>
     </figure>
 
@@ -272,7 +271,7 @@ $dir = "./images/portfolio/";
         <img src="images/portadas/1.Gente.jpg" alt="img01"/>
         <figcaption>
             <h2>People of Cocodrilos</h2>
-            <p><a href="gente.php">View more</a></p>
+            <p><a href="gente_EN.php">View more</a></p>
         </figcaption>
     </figure>
 
@@ -280,14 +279,14 @@ $dir = "./images/portfolio/";
         <img src="images/portadas/1.hermosa.jpg" alt="img01"/>
         <figcaption>
             <h2>The most beautiful land</h2>
-            <p><a href="hermosa.php">View more</a></p>
+            <p><a href="hermosa_EN.php">View more</a></p>
         </figcaption>
     </figure>
      <figure class="effect-oscar wowload fadeInUp short_title">
         <img src="images/portadas/1.piotai.jpg" alt="img01"/>
         <figcaption>
             <h2>Pio Tai</h2>
-            <p><a href="piotai.php">View more</a></p>
+            <p><a href="piotai_EN.php">View more</a></p>
         </figcaption>
     </figure>
 
@@ -300,7 +299,7 @@ $dir = "./images/portfolio/";
         <img src="images/portadas/Sabana Camaguey 08-2011382.jpg" alt="img01"/>
         <figcaption>
             <h2>The pink Flamingos of Maximo river</h2>
-            <p><a href="riomaximo.php">View more</a></p>
+            <p><a href="riomaximo_EN.php">View more</a></p>
         </figcaption>
     </figure>
 
@@ -308,14 +307,14 @@ $dir = "./images/portfolio/";
         <img src="images/portadas/2.parrandas.jpg" alt="img01"/>
         <figcaption>
             <h2>Surreal Cuba: Christmas Rousing</h2>
-            <p><a href="remedios.php">View more</a></p>
+            <p><a href="remedios_EN.php">View more</a></p>
         </figcaption>
     </figure>
     <figure class="effect-oscar  wowload fadeInUp long_title">
         <img src="images/portadas/2.baloon.jpg" alt="img01"/>
         <figcaption>
             <h2>Rubber match: Men vs. Fish in Cuba</h2>
-            <p><a href="baloons.php">View more</a></p>
+            <p><a href="baloons_EN.php">View more</a></p>
         </figcaption>
     </figure>
 </div>
