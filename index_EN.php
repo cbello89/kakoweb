@@ -212,46 +212,26 @@ $dir = "./images/portfolio/";
            </div>
        </div>
 
-       <div class="col-sm-3">
-           <div class="row news">
-               <div class="col-sm-4 date">
-                   <div class="row first"><strong>Aug</strong></div>
-                   <div class="row second"><strong>2017</strong></div>
-               </div>
+     
 
-               <div class="col-sm-8 text">
 
-                   <div class="row">Exhibición de la serie fotográfica "Lugares Comunes|Common Places" en el espacio La Pared Negra de la Fabrica de Arte Cubano </div>
+   <div class=col-sm-3>
+        <div class="row news">
+            <div class="date2 "><p>Aug<br>2017</p></div>
+            <div class="text1">Exhibición de la serie fotográfica "Lugares Comunes|Common Places" en el espacio La Pared Negra de la Fabrica de Arte Cubano</div>
+        </div>
 
-               </div>
-           </div>
+        <div class="row news1">
+            <div class="date2 "><p>May<br>28<br>2016</p></div>
+            <div class="text1">Presentacion de la ponencia "Cine para antropologos o Etnografia para cineastas. Multidiciplinariedad en el proyecto documental 'Hombres de Cocodrilos'. Congreso de Latin American Studies Association (LASA). NY, EUA"</div>
+        </div>
 
-           <div class="row news1">
-               <div class="col-sm-4 date1">
+        <div class="row news1">
+            <div class="date2 "><p>Aug<br>2017</p></div>
+            <div class="text1">Exhibición de la serie fotográfica "Lugares Comunes|Common Places" en el espacio La Pared Negra de la Fabrica de Arte Cubano</div>
+        </div>
+   </div>
 
-                   <div class="row first" style="font-size: 30px;"><strong>May</strong></div>
-                   <div class="row first" style="font-size: 30px"><strong>28</strong></div>
-
-                   <div class="row second"><strong>2016</strong></div>
-               </div>
-
-               <div class="col-sm-8 text">
-                   <div class="row">Presentacion de la ponencia "Cine para antropologos o Etnografia para cineastas. Multidiciplinariedad en el proyecto documental 'Hombres de Cocodrilos'. Congreso de Latin American Studies Association (LASA). NY, EUA"</div>
-               </div>
-           </div>
-
-           <div class="row news1">
-               <div class="col-sm-4 date1">
-                   <div class="row first"><strong>Abr</strong></div>
-                   <div class="row second"><strong>2015</strong></div>
-               </div>
-
-               <div class="col-sm-8 text">
-                   <div class="row">"Gente de Cocodrilos" se exhibe como parte del proyecto "Zona Franca", exposiciones colaterales a la XII Bienal de La Habana. Fortaleza San Carlos de la Cabaña</div>
-               </div>
-           </div>
-
-       </div>
 
    </div>
 </div>
